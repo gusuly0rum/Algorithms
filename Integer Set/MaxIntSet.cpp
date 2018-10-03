@@ -13,13 +13,7 @@ MaxIntSet::MaxIntSet(int max) {
 /* public */
 
 // O(1)
-bool MaxIntSet::get(int value) {
-  checkIndex(value);
-  return store[value];
-}
-
-// O(1)
-void MaxIntSet::set(int value) {
+void MaxIntSet::insert(int value) {
   checkIndex(value);
   store[value] = true;
 }

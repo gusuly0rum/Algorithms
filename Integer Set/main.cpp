@@ -1,11 +1,16 @@
 #include "MaxIntSet.hpp"
-#include <iostream>
+#include "IntegerSet.hpp"
 
 int main() {
   MaxIntSet maxintset(5);
-  maxintset.set(0);
-  maxintset.set(2);
-  maxintset.set(4);
+  maxintset.insert(0);
+  maxintset.insert(2);
+  maxintset.insert(4);
+  maxintset.remove(2);
   maxintset.print();
+  
+  IntegerSet intset;
+  intset.insert(0);
+//  intset.print();
   return 0;
 }
