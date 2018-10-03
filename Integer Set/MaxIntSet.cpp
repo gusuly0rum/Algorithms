@@ -3,6 +3,7 @@
 #include "MaxIntSet.hpp"
 
 /* constructor */
+
 MaxIntSet::MaxIntSet(int max) {
   max = max;
   store = new bool[max];
@@ -10,24 +11,29 @@ MaxIntSet::MaxIntSet(int max) {
 }
 
 /* public */
+
 // O(1)
 bool MaxIntSet::get(int value) {
   return store[value];
 }
+
 // O(1)
 void MaxIntSet::set(int value) {
   store[value] = true;
 }
+
 // O(1)
 void MaxIntSet::remove(int value) {
   store[value] = false;
 }
+
 // O(1)
 bool MaxIntSet::includes(int value) {
   return !!store[value];
 }
 
 /* private */
+
 void MaxIntSet::fillStore() {
   for (int index = 0; index < max; index++) {
     store[index] = false;
