@@ -9,3 +9,4 @@ A repository created to study data structures and stuff like that.
 - [ ] Hash Set
 - [ ] Hash Map
 - [ ] LRU Cache
+- [ ] Binary Search Tree
