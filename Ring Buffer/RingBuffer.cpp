@@ -18,20 +18,53 @@ RingBuffer::~RingBuffer() {
 
 /* public */
 
+// accessors
+
 // O(1)
-int RingBuffer::get(int index) {
-  checkIndex(index);
-  return store[index];
+int &RingBuffer::operator[](int index) {
+  int internal = intern(index);
+  checkIndexGet(internal);
+  return store[internal];
 }
 
+// O(1)
+int RingBuffer::get(int index) {
+  int internal = intern(index);
+  checkIndexGet(internal);
+  return store[internal];
+}
+
+// O(1)
+void RingBuffer::set(int index, int value) {
+  int internal = intern(index);
+  checkIndexSet(internal);
+  store[internal] = value;
+}
+
+// O(1) ammortized
 void RingBuffer::push(int value) {
   if (count == capacity) resize();
-  store[count] = value;
+  set(count, value);
   count++;
 }
 
+// O(1) ammortized
 void RingBuffer::unshift(int value) {
   if (count == capacity) resize();
+  set(capacity - 1, value);
+  count++;
+}
+
+// O(1)
+int RingBuffer::pop() {
+  count--;
+  return get(count);
+}
+
+// O(1)
+int RingBuffer::shift() {
+  start++;
+  return get(start - 1);
 }
 
 void RingBuffer::print() {
@@ -45,14 +78,35 @@ void RingBuffer::print() {
 
 /* private */
 
-void RingBuffer::checkIndex(int index) {
-  if (indexInvalid(index)) {
+void RingBuffer::checkIndexGet(int index) {
+  if (indexInvalidGet(index)) {
     throw std::out_of_range("Index out of bounds");
   }
 }
 
-bool RingBuffer::indexInvalid(int index) {
-  return (index < 0 ) || (index >= capacity);
+void RingBuffer::checkIndexSet(int index) {
+  if (indexInvalidSet(index)) {
+    throw std::out_of_range("Index out of bounds");
+  }
+}
+
+bool RingBuffer::indexInvalidGet(int index) {
+  return (index < 0 ) || (index >= count);
+}
+
+bool RingBuffer::indexInvalidSet(int index) {
+  return (index < 0 ) || (index > count);
+}
+
+int RingBuffer::intern(int index) {
+  return wrap(index + start) % capacity;
+}
+
+int RingBuffer::wrap(int index) {
+  while (index < 0) {
+    index += capacity;
+  }
+  return index;
 }
 
 void RingBuffer::fill() {
@@ -62,6 +116,6 @@ void RingBuffer::fill() {
 }
 
 void RingBuffer::resize() {
-  int new_capacity = capacity * 2;
-  int* new_store = new int[new_capacity];
+//  int new_capacity = capacity * 2;
+//  int* new_store = new int[new_capacity];
 }
