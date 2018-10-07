@@ -9,8 +9,8 @@ int main() {
   maxintset.remove(2);
   maxintset.print();
   
-  IntegerSet intset;
-  intset.insert(0);
+//  IntegerSet intset;
+//  intset.insert(0);
 //  intset.print();
   return 0;
 }

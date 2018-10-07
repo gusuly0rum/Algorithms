@@ -3,15 +3,13 @@
 #include "MaxIntSet.hpp"
 
 /* constructor */
-
 MaxIntSet::MaxIntSet(int max) {
   capacity = max;
   store = new bool[capacity];
-  fillStore();
+  fill();
 }
 
 /* public */
-
 // O(1)
 void MaxIntSet::insert(int value) {
   checkIndex(value);
@@ -25,12 +23,12 @@ void MaxIntSet::remove(int value) {
 }
 
 // O(1)
-bool MaxIntSet::includes(int value) {
+bool MaxIntSet::includes(int value) const {
   checkIndex(value);
   return !!store[value];
 }
 
-void MaxIntSet::print() {
+void MaxIntSet::print() const {
   std::cout << "{ ";
   for (int index = 0; index < capacity; index++) {
     std::cout << store[index];
@@ -40,19 +38,18 @@ void MaxIntSet::print() {
 }
 
 /* private */
-
-void MaxIntSet::fillStore() {
+void MaxIntSet::fill() {
   for (int index = 0; index < capacity; index++) {
     store[index] = false;
   }
 }
 
-void MaxIntSet::checkIndex(int index) {
-  if (indexInvalid(index)) {
+void MaxIntSet::checkIndex(int index) const {
+  if (isInvalid(index)) {
     throw std::out_of_range("Index out of bounds");
   }
 }
 
-bool MaxIntSet::indexInvalid(int index) {
+bool MaxIntSet::isInvalid(int index) const {
   return (index < 0) || (index >= capacity);
 }
