@@ -4,7 +4,7 @@ A repository created to study data structures and stuff like that.
 
 - [x] Dynamic Array
 - [x] Ring Buffer
-- [ ] Linked List
+- [x] Linked List
 - [ ] Integer Set
 - [ ] Hash Set
 - [ ] Hash Map
