@@ -13,6 +13,9 @@ int main() {
   array.push(4);
   array.unshift(0);
   array.push(5);
+  array.pop();
+  array.shift();
+  array.shift();
   
   print(array[0]);
   print(array[1]);

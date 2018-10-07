@@ -41,12 +41,19 @@ void RingBuffer::unshift(int value) {
 
 // O(1)
 int RingBuffer::pop() {
-  return 0;
+  int value = (*this)[count - 1];
+  (*this)[count - 1] = NULL;
+  count--;
+  return value;
 }
 
 // O(1)
 int RingBuffer::shift() {
-  return 0;
+  int value = (*this)[0];
+  (*this)[0] = NULL;
+  start++;
+  count--;
+  return value;
 }
 
 /* debugger */
