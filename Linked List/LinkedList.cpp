@@ -1,28 +1,89 @@
-#include "Node.hpp"
+#include <iostream>
 #include "LinkedList.hpp"
 
 /* constructor */
-LinkedList::LinkedList(Node head, Node tail) {
+LinkedList::LinkedList() {
   count = 0;
-  head = head;
-  tail = tail;
+  head = new Node(NULL);
+  tail = new Node(NULL);
+  head -> next = tail;
+  tail -> prev = head;
+}
+
+LinkedList::~LinkedList() {
+  while (!isEmpty()) {
+    last() -> destroy();
+  }
 }
 
 /* public */
-Node* LinkedList::first() {
+// O(1)
+Node* LinkedList::first() const {
   return head -> next;
 }
 
-Node* LinkedList::last() {
-  return head -> prev;
+// O(1)
+Node* LinkedList::last() const {
+  return tail -> prev;
 }
 
-int LinkedList::length() {
-  return count;
+// O(1)
+void LinkedList::push(int value) {
+  Node* node = new Node(value);
+  node -> next = tail;
+  node -> prev = last();
+  last() -> next = node;
+  tail -> prev = node;
+  count++;
 }
 
-bool LinkedList::isEmpty() {
+// O(n)
+void LinkedList::remove(int value) {
+  Node* node = find(value);
+  node -> destroy();
+  count--;
+}
+
+// O(n)
+Node* LinkedList::find(int value) const {
+  Node* node = first();
+  while (node != tail) {
+    if (node -> value == value) {
+      return node;
+    }
+    node = node -> next;
+  }
+  return nullptr;
+}
+
+// O(n)
+bool LinkedList::includes(int value) const {
+  Node* node = first();
+  while (node != tail) {
+    if (node -> value == value) {
+      return true;
+    }
+    node = node -> next;
+  }
+  return false;
+}
+
+bool LinkedList::isEmpty() const {
   return first() == tail;
+}
+
+// debugger
+void LinkedList::print() const {
+  int iter = 1;
+  Node* node = first();
+  std::cout << "{ ";
+  while (node != tail) {
+    if (iter < count) std::cout << node -> value << ", ";
+    if (iter == count) std::cout << node -> value;
+    iter++;
+    node = node -> next;
+  }
+  std::cout << " }" << std::endl;
 }
 
 /* private */

@@ -1,12 +1,14 @@
 class Node {
+// variables
 public:
-  int key;
-  int val;
+  int value;
   Node* next;
   Node* prev;
   
 public:
-  Node(int key, int val);
+  // constructor
+  Node(int val);
   
-private:
+  // basic operations
+  void destroy();
 };
