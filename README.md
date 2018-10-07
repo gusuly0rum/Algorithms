@@ -3,7 +3,7 @@
 A repository created to study data structures and stuff like that.
 
 - [x] Dynamic Array
-- [ ] Ring Buffer
+- [x] Ring Buffer
 - [ ] Linked List
 - [ ] Integer Set
 - [ ] Hash Set
