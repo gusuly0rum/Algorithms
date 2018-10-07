@@ -11,9 +11,7 @@ public:
   ~RingBuffer();
   
   // accessors
-  int &operator[](int index);
-  int get(int index);
-  void set(int index, int value);
+  int& operator [] (int index);
   
   // basic operators
   int pop();
@@ -22,16 +20,14 @@ public:
   void unshift(int value);
   
   // debugger
-  void print();
+  void print() const;
   
 private:
   // internal functions
   void fill();
   void resize();
-  int wrap(int index);
-  int intern(int index);
-  void checkIndexGet(int index);
-  void checkIndexSet(int index);
-  bool indexInvalidGet(int index);
-  bool indexInvalidSet(int index);
+  int wrap(int index) const;
+  int intern(int index) const;
+  bool isInvalid(int index) const;
+  void checkIndex(int index) const;
 };
