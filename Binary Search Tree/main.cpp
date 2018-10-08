@@ -3,6 +3,6 @@
 
 int main() {
   BinarySearchTree bst;
-  BSTNode* n1(1);
+  std::cout << !nullptr << std::endl;
   return 0;
 }
