@@ -1,7 +1,9 @@
 #include "BSTNode.hpp"
 
 class BinarySearchTree {
+public:
   // member variables
+  BSTNode* root;
     
 public:
   // constructor
