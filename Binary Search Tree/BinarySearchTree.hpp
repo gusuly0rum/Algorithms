@@ -1,3 +1,4 @@
+#include <vector>
 #include "BSTNode.hpp"
 
 class BinarySearchTree {
@@ -14,7 +15,8 @@ public:
   bool includes(int value);
   BSTNode* find(int value);
   BSTNode* insert(int value);
-    
-private:
-  // internal member functions
+  
+  // traversal
+  void bfs(int order[]);
+  void dfs(int order[]);
 };

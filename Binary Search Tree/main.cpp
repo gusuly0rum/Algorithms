@@ -24,16 +24,5 @@ int main() {
   print(bst.root->rite->rite->value == 9);
 //  print(bst.root->rite->rite->rite->value == 10);
   
-  
-//  expect(prefilled_bst.root.value).to eq(5)
-//  expect(prefilled_bst.root.left.value).to eq(3)
-//  expect(prefilled_bst.root.left.left.value).to eq(1)
-//  expect(prefilled_bst.root.left.left.left.value).to eq(0)
-//  expect(prefilled_bst.root.left.left.right.value).to eq(2)
-//
-//  expect(prefilled_bst.root.left.right.value).to eq(4)
-//  expect(prefilled_bst.root.right.value).to eq(7)
-//  expect(prefilled_bst.root.right.right.value).to eq(9)
-//  expect(prefilled_bst.root.right.right.right.value).to eq(10)
   return 0;
 }
