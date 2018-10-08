@@ -7,7 +7,7 @@ public:
     
 public:
     // constructor
-    BSTNode(int value);
+    BSTNode(int value = 0);
     
     // basic operations
     

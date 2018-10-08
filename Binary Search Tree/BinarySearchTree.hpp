@@ -7,7 +7,7 @@ public:
     
 public:
   // constructor
-  BinarySearchTree();
+  BinarySearchTree(BSTNode* root = nullptr);
   
   // basic operations
   void insert(int value);

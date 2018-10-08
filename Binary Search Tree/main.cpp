@@ -2,5 +2,6 @@
 #include "BinarySearchTree.hpp"
 
 int main() {
-    return 0;
+  BinarySearchTree bst;
+  return 0;
 }
