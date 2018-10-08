@@ -14,11 +14,4 @@ public:
   bool includes(int value);
   BSTNode* find(int value);
   BSTNode* insert(int value);
-  
-  // traversal
-  std::vector<BSTNode*> bfs();
-  std::vector<BSTNode*> dfs();
-  
-  // debugger
-  void print();
 };

@@ -14,7 +14,7 @@ int main() {
     bst.insert(values[index]);
   }
   
-  bst.bfs();
+//  bst.root->bfs();
   
 //  print(bst.root->value == 5);
 //  print(bst.root->left->value == 3);

@@ -6,7 +6,6 @@ BinarySearchTree::BinarySearchTree(BSTNode* root) {
 }
 
 /* basic operations */
-
 BSTNode* BinarySearchTree::insert(int value) {
   BSTNode* node = new BSTNode(value);
   if (this->root == nullptr) {
@@ -24,24 +23,4 @@ BSTNode* BinarySearchTree::find(int value) {
     node = (value < node->value) ? node->left : node->rite;
   }
   return nullptr;
-}
-
-std::vector<BSTNode*> BinarySearchTree::bfs() {
-  BSTNode* node;
-  std::vector<BSTNode*> children;
-  std::vector<BSTNode*> queue { this->root };
-  std::vector<BSTNode*> order { this->root };
-  
-  while (!queue.empty()) {
-    node = queue[0];
-    queue.erase(queue.begin());
-    children = node->children();
-    
-    for (int index = 0; index < children.size(); index++) {
-      queue.push_back(children[index]);
-      order.push_back(children[index]);
-    }
-  }
-  
-  return order;
 }

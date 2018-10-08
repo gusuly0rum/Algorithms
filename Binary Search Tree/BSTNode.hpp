@@ -1,4 +1,5 @@
 #include <vector>
+#include <iostream>
 
 class BSTNode {
 public:
@@ -15,4 +16,11 @@ public:
   bool unbound();
   void append(BSTNode* node);
   std::vector<BSTNode*> children();
+  
+  // traversal
+  std::vector<BSTNode*> bfs();
+  std::vector<BSTNode*> dfs();
+  
+  // debugger
+  void print();
 };
