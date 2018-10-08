@@ -1,6 +1,8 @@
 class IntegerSet {
   //variables
+public:
   int count;
+private:
   int numBuckets;
   int** store;
     
@@ -11,15 +13,16 @@ public:
   // basic operations
   void insert(int val);
   void remove(int val);
-  bool includes(int val);
+  bool includes(int val) const;
   
   // debugger
-  void print();
+  void print() const;
   
 private:
   // internal functions
+  void fill();
   void resize();
-  void fillStore();
-  int hash(int val);
-  int bucketIndex(int val);
+  int hash(int val) const;
+  int length(int bucket[]) const;
+  int bucketIndex(int val, int nBuckets) const;
 };
