@@ -10,10 +10,10 @@ public:
   BinarySearchTree(BSTNode* root = nullptr);
   
   // basic operations
-  void insert(int value);
   void remove(int value);
   bool includes(int value);
   BSTNode* find(int value);
+  BSTNode* insert(int value);
     
 private:
   // internal member functions
