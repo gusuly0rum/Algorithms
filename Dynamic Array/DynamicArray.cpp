@@ -1,6 +1,6 @@
 #include <iostream>
 #include <stdexcept>
-#include "dynamicarray.hpp"
+#include "DynamicArray.hpp"
 
 /* Constructor & Destructor */
 
@@ -12,27 +12,21 @@ DynamicArray::DynamicArray() {
 }
 
 DynamicArray::~DynamicArray() {
-  delete [] store;
+  delete[] store;
 }
 
 /* Public */
 
 // O(1)
-int DynamicArray::get(int index) {
+int& DynamicArray::operator[] (int index) {
   checkIndex(index);
   return store[index];
 }
 
 // O(1)
-void DynamicArray::set(int index, int val) {
-  checkIndex(index);
-  store[index] = val;
-}
-
-// O(1)
 void DynamicArray::push(int val) {
   if (count == capacity) resize();
-  store[count] = val;
+  (*this)[count] = val;
   count++;
 }
 
@@ -40,7 +34,7 @@ void DynamicArray::push(int val) {
 int DynamicArray::pop() {
   checkIndex(count - 1);
   count--;
-  store[count] = NULL;
+  (*this)[count] = NULL;
   return store[count];
 }
 
@@ -48,21 +42,21 @@ int DynamicArray::pop() {
 void DynamicArray::unshift(int val) {
   if (count == capacity) resize();
   for (int index = count - 1; index >= 0; index--) {
-    store[index + 1] = store[index];
+    (*this)[index + 1] = (*this)[index];
   }
-  store[0] = val;
+  (*this)[0] = val;
   count++;
 }
 
 // O(n)
 int DynamicArray::shift() {
   checkIndex(0);
-  int first = store[0];
+  int first = (*this)[0];
   for (int index = 1; index < count; index++) {
-    store[index - 1] = store[index];
+    (*this)[index - 1] = (*this)[index];
   }
   count--;
-  store[count] = NULL;
+  (*this)[count] = NULL;
   return first;
 }
 
@@ -84,7 +78,7 @@ void DynamicArray::checkIndex(int index) {
 }
 
 bool DynamicArray::isInvalid(int index) {
-  return (index < 0) || (index >= count);
+  return index < 0;
 }
 
 void DynamicArray::resize() {
@@ -92,10 +86,10 @@ void DynamicArray::resize() {
   int* new_store = new int[capacity];
   
   for (int index = 0; index < count; index++) {
-    new_store[index] = store[index];
+    new_store[index] = (*this)[index];
   }
   
-  delete [] store;
+  delete[] store;
   store = new_store;
   capacity = new_capacity;
   fill();
@@ -103,6 +97,6 @@ void DynamicArray::resize() {
 
 void DynamicArray::fill() {
   for (int index = count; index < capacity; index++) {
-    store[index] = NULL;
+    (*this)[index] = NULL;
   }
 }

@@ -17,7 +17,7 @@ RingBuffer::~RingBuffer() {
 
 /* accessors */
 // O(1)
-int& RingBuffer::operator [] (int index) {
+int& RingBuffer::operator[] (int index) {
   int internal = intern(index);
   checkIndex(internal);
   return store[internal];

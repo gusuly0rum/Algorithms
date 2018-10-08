@@ -10,8 +10,7 @@ public:
   ~DynamicArray();
   
   // accessors
-  int get(int index);
-  void set(int index, int val);
+  int& operator[] (int index);
   
   // basic operations
   int pop();

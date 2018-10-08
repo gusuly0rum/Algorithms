@@ -11,7 +11,7 @@ public:
   ~RingBuffer();
   
   // accessors
-  int& operator [] (int index);
+  int& operator[] (int index);
   
   // basic operators
   int pop();
