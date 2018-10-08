@@ -10,6 +10,6 @@ public:
   BSTNode(int value = 0);
 
   // basic operations
-  bool childless();
+  bool unbound();
   void append(BSTNode* node);
 };

@@ -6,20 +6,9 @@ BSTNode::BSTNode(int value) {
   this->rite = nullptr;
 }
 
-bool BSTNode::childless() {
+bool BSTNode::unbound() {
   return !(this->left && this->rite);
 }
 
 void BSTNode::append(BSTNode* node) {
-  if (this->childless) {
-    
-    if (node->value <= this->value) {
-      this->left = node;
-    } else {
-      this-> right = node;
-    }
-    
-  } else {
-    
-  }
 }
