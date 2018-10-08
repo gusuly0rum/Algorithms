@@ -17,7 +17,7 @@ A repository created to study data structures and stuff like that.
 - [ ] Kahn's Algorithm
 - [x] Linked List
 - [ ] LRU Cache
-- [ ] Merge Sort
+- [x] Merge Sort
 - [ ] Polytree
 - [ ] Queue
 - [ ] Quick Sort
