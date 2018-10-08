@@ -1,13 +1,13 @@
 class BSTNode {
 public:
     // member variables
-    int value;
+    int* value;
     BSTNode* left;
     BSTNode* rite;
     
 public:
     // constructor
-    BSTNode(int value = 0);
+    BSTNode(int value = nullptr);
     
     // basic operations
     
