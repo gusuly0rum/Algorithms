@@ -1,15 +1,14 @@
-//
-//  main.cpp
-//  Binary Search
-//
-//  Created by Donguk Kim on 10/7/18.
-//  Copyright © 2018 Donguk Kim. All rights reserved.
-//
+#include "BinarySearch.hpp"
 
-#include <iostream>
-
-int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+int main() {
+  
+  std::vector<int> array { 1, 5, 7, 9, 15 };
+  print(array);
+  
+  std::cout << binarySearch(array, 5) << std::endl;
+  std::cout << binarySearch(array, 9) << std::endl;
+  std::cout << binarySearch(array, 10) << std::endl;
+  std::cout << binarySearch(array, -10) << std::endl;
+  
+  return 0;
 }
