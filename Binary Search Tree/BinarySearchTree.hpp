@@ -1,4 +1,3 @@
-#include <vector>
 #include "BSTNode.hpp"
 
 class BinarySearchTree {
@@ -17,6 +16,9 @@ public:
   BSTNode* insert(int value);
   
   // traversal
-  void bfs(int order[]);
-  void dfs(int order[]);
+  std::vector<BSTNode*> bfs();
+  std::vector<BSTNode*> dfs();
+  
+  // debugger
+  void print();
 };

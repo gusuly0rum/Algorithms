@@ -26,12 +26,22 @@ BSTNode* BinarySearchTree::find(int value) {
   return nullptr;
 }
 
-void BinarySearchTree::bfs(int order[]) {
+std::vector<BSTNode*> BinarySearchTree::bfs() {
   BSTNode* node;
+  std::vector<BSTNode*> children;
   std::vector<BSTNode*> queue { this->root };
+  std::vector<BSTNode*> order { this->root };
   
   while (!queue.empty()) {
     node = queue[0];
     queue.erase(queue.begin());
+    children = node->children();
+    
+    for (int index = 0; index < children.size(); index++) {
+      queue.push_back(children[index]);
+      order.push_back(children[index]);
+    }
   }
+  
+  return order;
 }

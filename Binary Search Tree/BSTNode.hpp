@@ -1,3 +1,5 @@
+#include <vector>
+
 class BSTNode {
 public:
   // member variables
@@ -12,4 +14,5 @@ public:
   // basic operations
   bool unbound();
   void append(BSTNode* node);
+  std::vector<BSTNode*> children();
 };
