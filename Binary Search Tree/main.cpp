@@ -13,7 +13,5 @@ int main() {
     bst.insert(values[index]);
   }
   
-  BSTNode* node = bst.find(-10);
-  
   return 0;
 }

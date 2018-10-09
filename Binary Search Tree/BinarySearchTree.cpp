@@ -24,3 +24,12 @@ BSTNode* BinarySearchTree::find(int value) {
   }
   return nullptr;
 }
+
+bool BinarySearchTree::includes(int value) {
+  BSTNode* node = root;
+  while (node) {
+    if (node->value == value) return true;
+    node = (value < node->value) ? node->left : node->rite;
+  }
+  return false;
+}
