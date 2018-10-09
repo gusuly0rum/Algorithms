@@ -14,6 +14,7 @@ public:
   ~BSTNode();
 
   // basic operations
+  BSTNode* max();
   bool unbound() const;
   void append(BSTNode* node);
   std::vector<BSTNode*> children() const;

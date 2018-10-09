@@ -24,5 +24,7 @@ int main() {
 //  print(bst.root->rite->rite->value == 9);
 //  print(bst.root->rite->rite->rite->value == 10);
   
+  print(bst.find(10)->max()->value);
+  
   return 0;
 }

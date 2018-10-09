@@ -14,6 +14,14 @@ BSTNode::~BSTNode() {
 }
 
 /* basic operations */
+BSTNode* BSTNode::max() {
+  BSTNode* node = this;
+  while (node->rite) {
+    node = node->rite;
+  }
+  return node;
+}
+
 bool BSTNode::unbound() const {
   return (left == nullptr) && (rite == nullptr);
 }
