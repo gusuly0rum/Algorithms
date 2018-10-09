@@ -13,5 +13,7 @@ int main() {
     bst.insert(values[index]);
   }
   
+  bst.root->printDFS();
+  
   return 0;
 }

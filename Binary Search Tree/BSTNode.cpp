@@ -51,13 +51,33 @@ std::vector<BSTNode*> BSTNode::bfs() {
   return order;
 }
 
-std::vector<BSTNode*> BSTNode::dfs(std::vector<BSTNode*>& order) {
+void BSTNode::dfs(std::vector<BSTNode*>& order) {
+  BSTNode* child;
+  order.push_back(this);
+  std::vector<BSTNode*> children = this->children();
+  for (int index = 0; index < children.size(); index++) {
+    child = children[index];
+    child->dfs(order);
+  }
 }
 
 /* debugger */
-void BSTNode::print() {
+void BSTNode::printBFS() {
   std::vector<BSTNode*> order = bfs();
 
+  std::cout << "{ ";
+  for (int index = 0; index < order.size(); index++) {
+    std::cout << order[index]->value;
+    if (index < order.size() - 1) std::cout << ", ";
+  }
+  std::cout << " }" << std::endl;
+}
+
+void BSTNode::printDFS() {
+  
+  std::vector<BSTNode*> order;
+  dfs(order);
+  
   std::cout << "{ ";
   for (int index = 0; index < order.size(); index++) {
     std::cout << order[index]->value;

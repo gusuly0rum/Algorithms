@@ -19,8 +19,9 @@ public:
   
   // traversal
   std::vector<BSTNode*> bfs();
-  std::vector<BSTNode*> dfs(std::vector<BSTNode*>& order);
+  void dfs(std::vector<BSTNode*>& order);
   
   // debugger
-  void print();
+  void printBFS();
+  void printDFS();
 };

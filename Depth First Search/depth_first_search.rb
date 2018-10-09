@@ -3,6 +3,12 @@ class PolyTreeNode
   attr_reader :parent
   attr_reader :children
 
+  def initialize (value)
+    @value = value
+    @parent = nil
+    @children = []
+  end
+
   def dfs (target_value)
     return self if @value == target_value
     @children.each do |child_node|
