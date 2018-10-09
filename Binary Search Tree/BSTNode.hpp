@@ -15,7 +15,7 @@ public:
   // basic operations
   bool unbound() const;
   void append(BSTNode* node);
-  std::vector<BSTNode*> children() const;
+  std::vector<BSTNode*> children();
   
   // traversal
   std::vector<BSTNode*> bfs();
