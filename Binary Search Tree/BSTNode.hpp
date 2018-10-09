@@ -9,8 +9,9 @@ public:
   BSTNode* rite;
 
 public:
-  // constructor
+  // constructor & destructor
   BSTNode(int value = 0);
+  ~BSTNode();
 
   // basic operations
   bool unbound() const;

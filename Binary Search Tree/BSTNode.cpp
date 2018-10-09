@@ -7,6 +7,12 @@ BSTNode::BSTNode(int value) {
   this->rite = nullptr;
 }
 
+BSTNode::~BSTNode() {
+  this->value = NULL;
+  this->left = nullptr;
+  this->rite = nullptr;
+}
+
 /* basic operations */
 bool BSTNode::unbound() const {
   return (left == nullptr) && (rite == nullptr);

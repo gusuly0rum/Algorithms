@@ -5,6 +5,10 @@ BinarySearchTree::BinarySearchTree(BSTNode* root) {
   this->root = root;
 }
 
+BinarySearchTree::~BinarySearchTree() {
+  this->root = nullptr;
+}
+
 /* basic operations */
 BSTNode* BinarySearchTree::insert(int value) {
   BSTNode* node = new BSTNode(value);
@@ -18,6 +22,18 @@ BSTNode* BinarySearchTree::insert(int value) {
 
 void BinarySearchTree::remove(int value) {
   std::vector<BSTNode*> pair = getTarget(value);
+  BSTNode* target = pair[0];
+  BSTNode* parent = pair[1];
+  
+  if (target->children().size() == 0) {
+    target->value <= parent->value ? parent->left = nullptr : parent->rite = nullptr;
+  }
+  
+  if (target->children().size() == 1) {
+  }
+  
+  if (target->children().size() == 2) {
+  }
 }
 
 BSTNode* BinarySearchTree::find(int value) {

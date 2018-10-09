@@ -6,8 +6,9 @@ public:
   BSTNode* root;
     
 public:
-  // constructor
+  // constructor & destructor
   BinarySearchTree(BSTNode* root = nullptr);
+  ~BinarySearchTree();
   
   // basic operations
   void remove(int value);
