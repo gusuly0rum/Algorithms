@@ -38,11 +38,20 @@ bool BinarySearchTree::includes(int value) {
   return false;
 }
 
-std::vector<BSTNode*> getTarget(int value) {
-  BSTNode* node = root;
-  while (node) {
-    if (node->value == value) return node;
-    node = (value < node->value) ? node->left : node->rite;
+std::vector<BSTNode*> BinarySearchTree::getTarget(int value) {
+  BSTNode* target = root;
+  BSTNode* parent = nullptr;
+  std::vector<BSTNode*> pair;
+  
+  while (target) {
+    if (target->value == value) {
+      pair.push_back(target);
+      pair.push_back(parent);
+      return pair;
+    }
+    parent = target;
+    target = (value < target->value) ? target->left : target->rite;
   }
-  return;
+  
+  return pair;
 }
