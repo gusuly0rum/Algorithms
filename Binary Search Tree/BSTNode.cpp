@@ -51,6 +51,9 @@ std::vector<BSTNode*> BSTNode::bfs() {
   return order;
 }
 
+std::vector<BSTNode*> BSTNode::dfs(std::vector<BSTNode*>& order) {
+}
+
 /* debugger */
 void BSTNode::print() {
   std::vector<BSTNode*> order = bfs();
