@@ -8,9 +8,8 @@ BSTNode::BSTNode(int value) {
 }
 
 BSTNode::~BSTNode() {
-  this->value = NULL;
-  this->left = nullptr;
-  this->rite = nullptr;
+  if (left) delete left;
+  if (rite) delete rite;
 }
 
 /* basic operations */

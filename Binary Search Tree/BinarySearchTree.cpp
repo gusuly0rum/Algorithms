@@ -6,7 +6,7 @@ BinarySearchTree::BinarySearchTree(BSTNode* root) {
 }
 
 BinarySearchTree::~BinarySearchTree() {
-  this->root = nullptr;
+  delete root;
 }
 
 /* basic operations */
@@ -31,6 +31,7 @@ void BinarySearchTree::remove(int value) {
     replacement->left = root->left;
     replacement->rite = root->rite;
     root = replacement;
+    delete target;
     return;
   }
   
@@ -39,6 +40,7 @@ void BinarySearchTree::remove(int value) {
   
   if (target->children().size() == 0) {
     isLeft ? parent->left = nullptr : parent->rite = nullptr;
+    delete target;
     return;
   }
   
@@ -48,6 +50,7 @@ void BinarySearchTree::remove(int value) {
     } else {
       isLeft ? parent->left = target->rite : parent->rite = target->rite;
     }
+    delete target;
     return;
   }
   
@@ -57,6 +60,7 @@ void BinarySearchTree::remove(int value) {
     replacement->left = target->left;
     replacement->rite = target->rite;
     isLeft ? parent->left = replacement : parent->rite = replacement;
+    delete target;
   }
 }
 
