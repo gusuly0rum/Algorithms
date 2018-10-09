@@ -3,7 +3,7 @@
 A repository created to study data structures and stuff like that.
 
 - [x] Binary Search
-- [ ] Binary Search Tree
+- [x] Binary Search Tree
 - [ ] Bit Manipulation
 - [x] Breadth First Search
 - [x] Depth First Search
