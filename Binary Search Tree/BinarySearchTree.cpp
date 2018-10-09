@@ -17,6 +17,7 @@ BSTNode* BinarySearchTree::insert(int value) {
 }
 
 void BinarySearchTree::remove(int value) {
+  std::vector<BSTNode*> pair = getTarget(value);
 }
 
 BSTNode* BinarySearchTree::find(int value) {
@@ -35,4 +36,13 @@ bool BinarySearchTree::includes(int value) {
     node = (value < node->value) ? node->left : node->rite;
   }
   return false;
+}
+
+std::vector<BSTNode*> getTarget(int value) {
+  BSTNode* node = root;
+  while (node) {
+    if (node->value == value) return node;
+    node = (value < node->value) ? node->left : node->rite;
+  }
+  return;
 }

@@ -14,4 +14,8 @@ public:
   bool includes(int value);
   BSTNode* find(int value);
   BSTNode* insert(int value);
+  
+private:
+  // internal
+  std::vector<BSTNode*> getTarget(int value);
 };
