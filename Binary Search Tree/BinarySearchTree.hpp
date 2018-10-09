@@ -16,6 +16,10 @@ public:
   BSTNode* find(int value);
   BSTNode* insert(int value);
   
+  // advanced operations
+  int depth();
+  bool isBalanced();
+  
 private:
   // internal
   std::vector<BSTNode*> getTarget(int value);

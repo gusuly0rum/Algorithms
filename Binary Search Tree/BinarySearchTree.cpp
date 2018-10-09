@@ -99,3 +99,9 @@ std::vector<BSTNode*> BinarySearchTree::getTarget(int value) {
   
   return pair;
 }
+
+int BinarySearchTree::depth() {
+}
+
+bool BinarySearchTree::isBalanced() {
+}
