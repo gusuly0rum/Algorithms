@@ -25,11 +25,19 @@ void BinarySearchTree::remove(int value) {
   BSTNode* target = pair[0];
   BSTNode* parent = pair[1];
   
+  bool isLeft = false;
+  if (target->value <= parent->value) isLeft = true;
+  
   if (target->children().size() == 0) {
-    target->value <= parent->value ? parent->left = nullptr : parent->rite = nullptr;
+    isLeft ? parent->left = nullptr : parent->rite = nullptr;
   }
   
   if (target->children().size() == 1) {
+    if (target->left) {
+      isLeft ? parent->left = target->left : parent->rite = target->left;
+    } else {
+      isLeft ? parent->left = target->rite : parent->rite = target->rite;
+    }
   }
   
   if (target->children().size() == 2) {
