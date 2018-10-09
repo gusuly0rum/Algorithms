@@ -6,7 +6,7 @@ BinarySearchTree::BinarySearchTree(BSTNode* root) {
 }
 
 BinarySearchTree::~BinarySearchTree() {
-  delete root;
+//  delete root;
 }
 
 /* basic operations */

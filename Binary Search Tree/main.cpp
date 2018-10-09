@@ -34,7 +34,10 @@ int main() {
 //  bst.remove(7);
 //  bst.root->printBFS();
   
-  bst.~BinarySearchTree();
+  BSTNode* node = new BSTNode(1);
+  node->~BSTNode();
+  
+//  bst.~BinarySearchTree();
 
   return 0;
 }
