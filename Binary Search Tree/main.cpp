@@ -37,7 +37,12 @@ int main() {
   // BinarySearchTree::depth test case
 //  print(bst.depth(bst.root->rite));
   
-  print(bst.isBalanced(bst.root));
+  // BinarySearchTree::isBalanced test case
+  print(bst.isBalanced(bst.root) == 0);
+  print(bst.isBalanced(bst.root->left) == 1);
+  print(bst.isBalanced(bst.root->rite) == 0);
+  print(bst.isBalanced(bst.root->rite->rite) == 1);
+  print(bst.isBalanced(bst.root->left->left) == 1);
 
   return 0;
 }
