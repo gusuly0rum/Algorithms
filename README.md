@@ -5,8 +5,8 @@ A repository created to study data structures and stuff like that.
 - [x] Binary Search
 - [ ] Binary Search Tree
 - [ ] Bit Manipulation
-- [ ] Breadth First Search
-- [ ] Depth First Search
+- [x] Breadth First Search
+- [x] Depth First Search
 - [ ] Dijkstra's Algorithm
 - [x] Dynamic Array
 - [ ] Graph
