@@ -25,11 +25,21 @@ void BinarySearchTree::remove(int value) {
   BSTNode* target = pair[0];
   BSTNode* parent = pair[1];
   
+  if (target == root) {
+    BSTNode* replacement = root->left->max();
+    remove(replacement->value);
+    replacement->left = root->left;
+    replacement->rite = root->rite;
+    root = replacement;
+    return;
+  }
+  
   bool isLeft = false;
   if (target->value <= parent->value) isLeft = true;
   
   if (target->children().size() == 0) {
     isLeft ? parent->left = nullptr : parent->rite = nullptr;
+    return;
   }
   
   if (target->children().size() == 1) {
@@ -38,9 +48,15 @@ void BinarySearchTree::remove(int value) {
     } else {
       isLeft ? parent->left = target->rite : parent->rite = target->rite;
     }
+    return;
   }
   
   if (target->children().size() == 2) {
+    BSTNode* replacement = target->left->max();
+    remove(replacement->value);
+    replacement->left = target->left;
+    replacement->rite = target->rite;
+    isLeft ? parent->left = replacement : parent->rite = replacement;
   }
 }
 
