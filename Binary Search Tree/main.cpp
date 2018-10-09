@@ -13,7 +13,7 @@ int main() {
     bst.insert(values[index]);
   }
   
-  bst.root->printDFS();
+  BSTNode* node = bst.find(-10);
   
   return 0;
 }
