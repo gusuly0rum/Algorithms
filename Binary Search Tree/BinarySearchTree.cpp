@@ -107,5 +107,17 @@ int BinarySearchTree::depth(BSTNode* node) const {
   return left >= rite ? left : rite;
 }
 
-//bool BinarySearchTree::isBalanced() const {
-//}
+bool BinarySearchTree::isBalanced(BSTNode* node) const {
+  if (!node) return true;
+  int left = depth(node->left);
+  int rite = depth(node->rite);
+  int difference = abs(left - rite);
+  
+  if (difference <= 1) {
+    bool leftBal = isBalanced(node->rite);
+    bool riteBal = isBalanced(node->left);
+    return leftBal && riteBal;
+  } else {
+    return false;
+  }
+}

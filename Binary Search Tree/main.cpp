@@ -24,7 +24,7 @@ int main() {
 //  print(bst.root->rite->rite->value == 9);
 //  print(bst.root->rite->rite->rite->value == 10);
 //
-//  // BinarySearchTree::remove test case
+  // BinarySearchTree::remove test case
 //  bst.remove(2);
 //  bst.root->printBFS();
 //  bst.remove(3);
@@ -35,7 +35,9 @@ int main() {
 //  bst.root->printBFS();
   
   // BinarySearchTree::depth test case
-  print(bst.depth(bst.root->rite));
+//  print(bst.depth(bst.root->rite));
+  
+  print(bst.isBalanced(bst.root));
 
   return 0;
 }

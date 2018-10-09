@@ -12,13 +12,13 @@ public:
   
   // basic operations
   void remove(int value);
+  BSTNode* insert(int value);
   bool includes(int value) const;
   BSTNode* find(int value) const;
-  BSTNode* insert(int value);
   
   // advanced operations
   int depth(BSTNode* node) const;
-  bool isBalanced() const;
+  bool isBalanced(BSTNode* node) const;
   
 private:
   // internal
