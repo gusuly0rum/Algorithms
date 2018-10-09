@@ -61,7 +61,7 @@ std::vector<BSTNode*> BSTNode::bfs() {
       order.push_back(children[index]);
     }
   }
-
+  
   return order;
 }
 
