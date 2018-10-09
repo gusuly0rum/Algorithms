@@ -14,35 +14,13 @@ bool BSTNode::unbound() const {
 
 void BSTNode::append(BSTNode* node) {
   if (node->value <= value) {
-    if (left) {
-      left->append(node);
-    } else {
-      left = node;
-    }
+    if (left) left->append(node);
+    if (left == nullptr) left = node;
     
   } else {
-    if (rite) {
-      rite->append(node);
-    } else {
-      rite = node;
-    }
+    if (rite) rite->append(node);
+    if (rite == nullptr) rite = node;
   }
-  
-  
-//  if (unbound()) {
-//    if (node->value <= value) {
-//      left = node;
-//    } else {
-//      rite = node;
-//    }
-//
-//  } else {
-//    if (node->value <= this->value) {
-//      left->append(node);
-//    } else {
-//      rite->append(node);
-//    }
-//  }
 }
 
 std::vector<BSTNode*> BSTNode::children() const {
