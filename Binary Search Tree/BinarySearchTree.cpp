@@ -64,7 +64,7 @@ void BinarySearchTree::remove(int value) {
   }
 }
 
-BSTNode* BinarySearchTree::find(int value) {
+BSTNode* BinarySearchTree::find(int value) const {
   BSTNode* node = root;
   while (node) {
     if (node->value == value) return node;
@@ -73,7 +73,7 @@ BSTNode* BinarySearchTree::find(int value) {
   return nullptr;
 }
 
-bool BinarySearchTree::includes(int value) {
+bool BinarySearchTree::includes(int value) const {
   BSTNode* node = root;
   while (node) {
     if (node->value == value) return true;
@@ -82,7 +82,7 @@ bool BinarySearchTree::includes(int value) {
   return false;
 }
 
-std::vector<BSTNode*> BinarySearchTree::getTarget(int value) {
+std::vector<BSTNode*> BinarySearchTree::getTarget(int value) const {
   BSTNode* target = root;
   BSTNode* parent = nullptr;
   std::vector<BSTNode*> pair;
@@ -100,8 +100,12 @@ std::vector<BSTNode*> BinarySearchTree::getTarget(int value) {
   return pair;
 }
 
-int BinarySearchTree::depth() {
+int BinarySearchTree::depth(BSTNode* node) const {
+  if (!node) return 0;
+  int left = depth(node->left) + 1;
+  int rite = depth(node->rite) + 1;
+  return left >= rite ? left : rite;
 }
 
-bool BinarySearchTree::isBalanced() {
-}
+//bool BinarySearchTree::isBalanced() const {
+//}
