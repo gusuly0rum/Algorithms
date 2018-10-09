@@ -8,7 +8,7 @@ BinarySearchTree::BinarySearchTree(BSTNode* root) {
 /* basic operations */
 BSTNode* BinarySearchTree::insert(int value) {
   BSTNode* node = new BSTNode(value);
-  if (this->root == nullptr) {
+  if (root == nullptr) {
     root = node;
   } else {
     root->append(node);
@@ -17,7 +17,7 @@ BSTNode* BinarySearchTree::insert(int value) {
 }
 
 BSTNode* BinarySearchTree::find(int value) {
-  BSTNode* node = this->root;
+  BSTNode* node = root;
   while (node) {
     if (node->value == value) return node;
     node = (value < node->value) ? node->left : node->rite;
