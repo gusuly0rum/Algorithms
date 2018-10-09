@@ -14,15 +14,15 @@ int main() {
   }
   
   // BinarySearchTree::insert test
-  print(bst.root->value == 5);
-  print(bst.root->left->value == 3);
-  print(bst.root->left->left->value == 1);
-  print(bst.root->left->left->left->value == 0);
-  print(bst.root->left->left->rite->value == 2);
-  print(bst.root->left->rite->value == 4);
-  print(bst.root->rite->value == 7);
-  print(bst.root->rite->rite->value == 9);
-  print(bst.root->rite->rite->rite->value == 10);
+//  print(bst.root->value == 5);
+//  print(bst.root->left->value == 3);
+//  print(bst.root->left->left->value == 1);
+//  print(bst.root->left->left->left->value == 0);
+//  print(bst.root->left->left->rite->value == 2);
+//  print(bst.root->left->rite->value == 4);
+//  print(bst.root->rite->value == 7);
+//  print(bst.root->rite->rite->value == 9);
+//  print(bst.root->rite->rite->rite->value == 10);
   
   return 0;
 }

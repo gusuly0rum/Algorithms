@@ -16,6 +16,9 @@ BSTNode* BinarySearchTree::insert(int value) {
   return node;
 }
 
+void BinarySearchTree::remove(int value) {
+}
+
 BSTNode* BinarySearchTree::find(int value) {
   BSTNode* node = root;
   while (node) {

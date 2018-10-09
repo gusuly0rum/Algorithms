@@ -23,7 +23,7 @@ void BSTNode::append(BSTNode* node) {
   }
 }
 
-std::vector<BSTNode*> BSTNode::children() {
+std::vector<BSTNode*> BSTNode::children() const {
   std::vector<BSTNode*> children;
   if (left) children.push_back(left);
   if (rite) children.push_back(rite);
