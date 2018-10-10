@@ -21,7 +21,7 @@ std::vector<int> mergeSort(std::vector<int> array) {
   return merge(left, rite);
 }
 
-// merge function
+// merge helper function
 std::vector<int> merge(std::vector<int> left, std::vector<int> rite) {
   std::vector<int> result;
   
