@@ -1,9 +1,6 @@
-#include <iostream>
-#include <stdexcept>
 #include "DynamicArray.hpp"
 
 /* Constructor & Destructor */
-
 DynamicArray::DynamicArray() {
   count = 0;
   capacity = 5;
@@ -15,7 +12,7 @@ DynamicArray::~DynamicArray() {
   delete[] store;
 }
 
-/* Public */
+/* Basic Operations */
 
 // O(1)
 int& DynamicArray::operator[] (int index) {
@@ -70,7 +67,6 @@ void DynamicArray::print() {
 }
 
 /* Private */
-
 void DynamicArray::checkIndex(int index) {
   if (isInvalid(index)) {
     throw std::out_of_range("Index out of bounds");

@@ -1,5 +1,8 @@
+#include <iostream>
+#include <stdexcept>
+
 class DynamicArray {
-  // variables
+  // member variables
   int count;
   int capacity;
   int* store;
@@ -22,7 +25,7 @@ public:
   void print();
 
 private:
-  // internal functions
+  // internal members
   void fill();
   void resize();
   bool isInvalid(int index);
