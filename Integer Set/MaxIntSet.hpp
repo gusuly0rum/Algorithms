@@ -1,3 +1,6 @@
+#include <iostream>
+#include <stdexcept>
+
 class MaxIntSet {
   // variables
   int capacity;

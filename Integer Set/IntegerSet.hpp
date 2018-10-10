@@ -1,5 +1,9 @@
+#include <string>
+#include <sstream>
+#include <iostream>
+
 class IntegerSet {
-  //variables
+  // member variables
 public:
   int count;
 private:
@@ -19,7 +23,7 @@ public:
   void print() const;
   
 private:
-  // internal functions
+  // internal member functions
   void fill();
   void resize();
   int hash(int val) const;

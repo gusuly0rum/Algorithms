@@ -1,14 +1,13 @@
 #include "MaxIntSet.hpp"
 #include "IntegerSet.hpp"
-#include <iostream>
 
 int main() {
-//  MaxIntSet maxintset(5);
-//  maxintset.insert(0);
-//  maxintset.insert(2);
-//  maxintset.insert(4);
-//  maxintset.remove(2);
-//  maxintset.print();
+  MaxIntSet maxintset(5);
+  maxintset.insert(0);
+  maxintset.insert(2);
+  maxintset.insert(4);
+  maxintset.remove(2);
+  maxintset.print();
   
   IntegerSet intset;
   intset.insert(1);
@@ -19,5 +18,6 @@ int main() {
   intset.insert(6);
   std::cout << intset.count << std::endl;
   intset.print();
+  
   return 0;
 }
