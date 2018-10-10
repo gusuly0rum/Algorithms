@@ -1,8 +1,9 @@
+#include <iostream>
 #include "Node.hpp"
 
 class LinkedList {
 public:
-  // variables
+  // member variables
   int count;
   Node* head;
   Node* tail;
@@ -27,5 +28,5 @@ public:
   void print() const;
   
 private:
-  // internal functions
+  // internal member functions
 };

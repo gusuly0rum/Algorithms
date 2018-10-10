@@ -1,6 +1,6 @@
 class Node {
-// variables
 public:
+  // member variables
   int value;
   Node* next;
   Node* prev;

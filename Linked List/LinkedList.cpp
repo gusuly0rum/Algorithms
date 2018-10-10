@@ -1,4 +1,3 @@
-#include <iostream>
 #include "LinkedList.hpp"
 
 /* constructor */
@@ -17,6 +16,7 @@ LinkedList::~LinkedList() {
 }
 
 /* public */
+
 // O(1)
 Node* LinkedList::first() const {
   return head -> next;
@@ -85,5 +85,3 @@ void LinkedList::print() const {
   }
   std::cout << " }" << std::endl;
 }
-
-/* private */
