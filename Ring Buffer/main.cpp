@@ -1,6 +1,6 @@
-#include <iostream>
 #include "RingBuffer.hpp"
 
+// debugger
 void print(int value) {
   std::cout << value << std::endl;
 }

@@ -1,5 +1,3 @@
-#include <iostream>
-#include <stdexcept>
 #include "RingBuffer.hpp"
 
 /* constructor & destructor */

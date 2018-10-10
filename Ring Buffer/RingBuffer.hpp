@@ -1,5 +1,8 @@
+#include <iostream>
+#include <stdexcept>
+
 class RingBuffer {
-  // variables
+  // member variables
   int start;
   int count;
   int capacity;
@@ -13,7 +16,7 @@ public:
   // accessors
   int& operator[] (int index);
   
-  // basic operators
+  // basic operations
   int pop();
   int shift();
   void push(int value);
@@ -23,7 +26,7 @@ public:
   void print() const;
   
 private:
-  // internal functions
+  // internal member functions
   void fill();
   void resize();
   int wrap(int index) const;
