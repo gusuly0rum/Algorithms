@@ -1,7 +1,6 @@
 #include "BinarySearch.hpp"
 
 // binary search
-
 int binarySearch(std::vector<int> array, int target) {
   
   int midIndex = (int) array.size() / 2;
@@ -21,7 +20,6 @@ int binarySearch(std::vector<int> array, int target) {
 }
 
 // debugger
-
 void print(std::vector<int> array) {
   std::cout << "{ ";
   for (int index = 0; index < array.size(); index++) {
