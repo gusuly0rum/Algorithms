@@ -1,4 +1,3 @@
-#include <iostream>
 #include "HeapSort.hpp"
 
 int main() {
