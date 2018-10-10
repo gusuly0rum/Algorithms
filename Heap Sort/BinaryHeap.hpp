@@ -1,7 +1,7 @@
 #include <vector>
 #include <iostream>
 
-class Heap {
+class BinaryHeap {
   // member variables
   std::vector<int> store;
   
