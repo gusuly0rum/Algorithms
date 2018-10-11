@@ -38,3 +38,16 @@ void BinaryMaxHeap::heapifyUp() {
 
 void BinaryMaxHeap::heapifyDown() {
 }
+
+int BinaryMaxHeap::parentIndex(int childIndex) {
+  return (childIndex - 1) / 2;
+}
+
+std::vector<int> BinaryMaxHeap::childIndices(int parentIndex) {
+  std::vector<int> indices;
+  int left = (parentIndex * 2 + 1);
+  int rite = (parentIndex * 2 + 2);
+  indices.push_back(left);
+  indices.push_back(rite);
+  return indices;
+}
