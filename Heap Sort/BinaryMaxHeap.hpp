@@ -1,5 +1,6 @@
 #include <vector>
 #include <iostream>
+#include <stdexcept>
 
 class BinaryMaxHeap {
   // member variables
@@ -23,5 +24,8 @@ private:
   
   int parentIndex(int childIndex);
   std::vector<int> childIndices(int parentIndex);
+  
+  // errors
+  void raise();
 };
 

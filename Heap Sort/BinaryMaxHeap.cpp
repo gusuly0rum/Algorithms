@@ -40,7 +40,9 @@ void BinaryMaxHeap::heapifyDown() {
 }
 
 int BinaryMaxHeap::parentIndex(int childIndex) {
-  return (childIndex - 1) / 2;
+  int index = (childIndex - 1) / 2;
+  if (index < 0) raise();
+  return index;
 }
 
 std::vector<int> BinaryMaxHeap::childIndices(int parentIndex) {
@@ -50,4 +52,8 @@ std::vector<int> BinaryMaxHeap::childIndices(int parentIndex) {
   indices.push_back(left);
   indices.push_back(rite);
   return indices;
+}
+
+void BinaryMaxHeap::raise() {
+  throw std::out_of_range("Root has no parent");
 }
