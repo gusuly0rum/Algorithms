@@ -16,12 +16,12 @@ int BinaryMaxHeap::count() {
 }
 
 int BinaryMaxHeap::max() {
-  return store[0];
+  return store.front();
 }
 
 int BinaryMaxHeap::extract() {
   int maximum = max();
-  store[0] = store[count() - 1];
+  store[0] = store.back();
   store.pop_back();
   heapifyDown();
   return maximum;
