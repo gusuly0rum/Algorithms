@@ -20,5 +20,8 @@ private:
   // internal members
   void heapifyUp();
   void heapifyDown();
+  
+  int parentIndex(int childIndex);
+  std::vector<int> childIndices(int parentIndex);
 };
 
