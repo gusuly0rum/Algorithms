@@ -1,4 +1,5 @@
 #include <string>
+#include <vector>
 #include <sstream>
 #include <iostream>
 
@@ -9,7 +10,7 @@ public:
 private:
   int numBuckets;
   int** store;
-    
+  
 public:
   // constructor
   IntegerSet();

@@ -8,7 +8,7 @@ IntegerSet::IntegerSet() {
   fill();
 }
 
-/* public */
+/* basic operations */
 void IntegerSet::insert(int val) {
   if (count == numBuckets) resize();
   int internal = bucketIndex(val, numBuckets);
@@ -28,6 +28,7 @@ bool IntegerSet::includes(int val) const {
   return !!bucket[0];
 }
 
+/* debugger */
 void IntegerSet::print() const {
   std::cout << "\n{\n";
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
