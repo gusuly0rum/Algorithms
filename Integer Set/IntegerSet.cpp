@@ -19,7 +19,7 @@ void IntegerSet::insert(int val) {
 
 void IntegerSet::remove(int val) {
   int* bucket = store[bucketIndex(val, numBuckets)];
-  bucket[0] = NULL;
+  bucket[0] = 0;
   count--;
 }
 
@@ -48,19 +48,18 @@ void IntegerSet::fill() {
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     store[indexRow] = new int[numBuckets];
     for (int indexCol = 0; indexCol < numBuckets; indexCol++) {
-      store[indexRow][indexCol] = NULL;
+      store[indexRow][indexCol] = 0;
     }
   }
 }
 
+struct bucketLength {
+};
+
 int IntegerSet::length(int bucket[]) const {
   int index = 0;
-  int length = 0;
-  while (bucket[index] != 0) {
-    index++;
-    length++;
-  }
-  return length;
+  while (bucket[index] != 0) index++;
+  return index;
 }
 
 int IntegerSet::bucketIndex(int val, int nBuckets) const {

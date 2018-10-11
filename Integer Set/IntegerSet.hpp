@@ -8,6 +8,7 @@ class IntegerSet {
 public:
   int count;
 private:
+  struct bucketLength;
   int numBuckets;
   int** store;
   
