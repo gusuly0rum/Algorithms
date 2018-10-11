@@ -15,7 +15,7 @@ public:
   int max();
   int count();
   int extract();
-  void push(int value);
+  void insert(int value);
   
 private:
   // internal members

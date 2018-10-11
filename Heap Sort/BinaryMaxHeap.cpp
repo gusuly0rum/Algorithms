@@ -27,7 +27,7 @@ int BinaryMaxHeap::extract() {
   return maximum;
 }
 
-void BinaryMaxHeap::push(int value) {
+void BinaryMaxHeap::insert(int value) {
   store.push_back(value);
   heapifyUp();
 }
