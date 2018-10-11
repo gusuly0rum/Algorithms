@@ -1,4 +1,4 @@
-#include "BinaryHeap.hpp"
+#include "BinaryMaxHeap.hpp"
 
 int main() {
   return 0;
