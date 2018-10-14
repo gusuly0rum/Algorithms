@@ -7,7 +7,7 @@ public:
     Bucket();
     
     // accessors
-    Bucket* operator[] (int index);
+    int& operator[](int index);
     
     // basic operations
     void push(int value);

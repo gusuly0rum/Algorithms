@@ -9,7 +9,7 @@
 IntegerSet::IntegerSet() {
   count = 0;
   numBuckets = 5;
-  Bucket* store[numBuckets];
+  Bucket store[numBuckets];
   fill();
 }
 
@@ -59,18 +59,12 @@ void IntegerSet::fill() {
   }
 }
 
-int IntegerSet::length(int bucket[]) const {
-  int index = 0;
-  while (bucket[index] != 0) index++;
-  return index;
-}
-
 int IntegerSet::bucketIndex(int val, int nBuckets) const {
   int hashValue = hash(val);
   if (hashValue > 0) {
-    return hashValue % numBuckets;
+    return hashValue % nBuckets;
   } else {
-    return (-1 * hashValue) % numBuckets;
+    return (-1 * hashValue) % nBuckets;
   }
 }
 
@@ -83,21 +77,18 @@ int IntegerSet::hash(int val) const {
 
 void IntegerSet::resize() {
   int value;
-  int* bucket;
   int bucketIdx;
+  Bucket* bucket;
   int new_buckets = numBuckets * 2;
-  int** new_store = new int*[new_buckets];
+  Bucket* new_store[new_buckets];
   
   for (int indexRow = 0; indexRow < new_buckets; indexRow++) {
-    new_store[indexRow] = new int[new_buckets];
-    for (int indexCol = 0; indexCol < new_buckets; indexCol++) {
-      new_store[indexRow][indexCol] = NULL;
-    }
+    new_store[indexRow] = new Bucket;
   }
   
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     bucket = store[indexRow];
-    for (int indexCol = 0; indexCol < length(bucket); indexCol++) {
+    for (int indexCol = 0; indexCol < bucket->length(); indexCol++) {
       value = bucket[indexCol];
       bucketIdx = bucketIndex(value, new_buckets);
       bucket = new_store[bucketIdx];

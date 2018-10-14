@@ -9,7 +9,12 @@ Bucket::Bucket() {
   std::vector<int> store;
 }
 
-/* Basic operations */
+/* Accessors */
+int& Bucket::operator[](int index) {
+  return store[index];
+}
+
+/* Basic Operations */
 void Bucket::push(int value) {
   store.push_back(value);
 }
