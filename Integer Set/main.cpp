@@ -11,13 +11,13 @@ int main() {
   maxintset.print();
   
   IntegerSet intset;
-//  intset.insert(1);
-//  intset.insert(2);
-//  intset.insert(3);
-//  intset.insert(4);
-//  intset.insert(5);
+  intset.insert(1);
+  intset.insert(2);
+  intset.insert(3);
+  intset.insert(4);
+  intset.insert(5);
 //  intset.insert(6);
-//  std::cout << intset.length() << std::endl;
+  std::cout << intset.length() << std::endl;
   intset.print();
   
   return 0;

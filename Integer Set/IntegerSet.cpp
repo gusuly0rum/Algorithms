@@ -20,21 +20,21 @@ int IntegerSet::length() const {
 void IntegerSet::insert(int val) {
   if (count == numBuckets) resize();
   int internal = bucketIndex(val, numBuckets);
-  Bucket bucket = store[internal];
-  bucket.push(val);
+  Bucket* bucket = &store[internal];
+  bucket->push(val);
   count++;
 }
 
 void IntegerSet::remove(int val) {
-  Bucket bucket = store[bucketIndex(val, numBuckets)];
-  bucket.remove(val);
+  Bucket* bucket = &store[bucketIndex(val, numBuckets)];
+  bucket->remove(val);
   count--;
 }
 
 bool IntegerSet::includes(int val) const {
   int internal = bucketIndex(val, numBuckets);
-  Bucket bucket = store[internal];
-  return bucket.includes(val);
+  Bucket* bucket = &store[internal];
+  return bucket->includes(val);
 }
 
 /* debugger */
