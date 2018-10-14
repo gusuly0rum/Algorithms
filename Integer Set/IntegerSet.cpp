@@ -78,7 +78,7 @@ int IntegerSet::hash(int val) const {
 void IntegerSet::resize() {
   int value;
   int bucketIdx;
-  Bucket bucket;
+  Bucket* bucket;
   int new_buckets = numBuckets * 2;
   Bucket* new_store = new Bucket[new_buckets];
   
@@ -87,12 +87,12 @@ void IntegerSet::resize() {
   }
   
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
-    bucket = store[indexRow];
-    for (int indexCol = 0; indexCol < bucket.length(); indexCol++) {
-      value = bucket[indexCol];
+    bucket = &store[indexRow];
+    for (int indexCol = 0; indexCol < bucket->length(); indexCol++) {
+      value = (*bucket)[indexCol];
       bucketIdx = bucketIndex(value, new_buckets);
-      bucket = new_store[bucketIdx];
-      bucket.push(value);
+      bucket = &new_store[bucketIdx];
+      bucket->push(value);
     }
   }
   
