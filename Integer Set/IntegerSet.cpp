@@ -17,6 +17,7 @@ int IntegerSet::length() const {
   return count;
 }
 
+// O(1) ammortized
 void IntegerSet::insert(int val) {
   if (count == numBuckets) resize();
   int internal = bucketIndex(val, numBuckets);
@@ -25,12 +26,14 @@ void IntegerSet::insert(int val) {
   count++;
 }
 
+// O(1) but worst case O(k)
 void IntegerSet::remove(int val) {
   Bucket* bucket = &store[bucketIndex(val, numBuckets)];
   bucket->remove(val);
   count--;
 }
 
+// O(1) but worst case O(k)
 bool IntegerSet::includes(int val) const {
   int internal = bucketIndex(val, numBuckets);
   Bucket* bucket = &store[internal];

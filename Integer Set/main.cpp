@@ -16,7 +16,10 @@ int main() {
   intset.insert(3);
   intset.insert(4);
   intset.insert(5);
-  intset.remove(10);
+  intset.remove(2);
+  intset.remove(3);
+  std::cout << intset.includes(1) << std::endl;
+  std::cout << intset.includes(2) << std::endl;
   std::cout << intset.length() << std::endl;
   intset.print();
   
