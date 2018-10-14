@@ -23,10 +23,14 @@ void Bucket::push(int value) {
 }
 
 void Bucket::remove(int value) {
-  int index;
-  for (index = 0; index < store.size(); index++) {
-    if (store[index] == value) break;
+  int index = -1;
+  for (int k = 0; k < store.size(); k++) {
+    if (store[k] == value) {
+      index = k;
+      break;
+    }
   }
+  if (index == -1) return;
   store.erase(store.begin() + index);
 }
 
