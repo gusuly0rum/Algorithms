@@ -1,8 +1,5 @@
-#include <iostream>
-#include <stdexcept>
-
 class MaxIntSet {
-  // variables
+  // member variables
   int capacity;
   bool* store;
     
@@ -19,7 +16,7 @@ public:
   void print() const;
     
 private:
-  // internal functions
+  // internal members
   void fill();
   bool isInvalid(int index) const;
   void checkIndex(int index) const;

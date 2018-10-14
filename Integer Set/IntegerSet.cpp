@@ -1,3 +1,7 @@
+#include <string>
+#include <vector>
+#include <sstream>
+#include <iostream>
 #include "IntegerSet.hpp"
 
 /* constructor */
@@ -52,9 +56,6 @@ void IntegerSet::fill() {
     }
   }
 }
-
-struct bucketLength {
-};
 
 int IntegerSet::length(int bucket[]) const {
   int index = 0;

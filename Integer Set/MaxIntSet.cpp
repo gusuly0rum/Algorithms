@@ -1,3 +1,5 @@
+#include <iostream>
+#include <stdexcept>
 #include "MaxIntSet.hpp"
 
 /* constructor */

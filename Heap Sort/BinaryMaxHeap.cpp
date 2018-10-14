@@ -49,8 +49,8 @@ std::vector<int> BinaryMaxHeap::childIndices(int parentIndex) {
   std::vector<int> indices;
   int left = (parentIndex * 2 + 1);
   int rite = (parentIndex * 2 + 2);
-  indices.push_back(left);
-  indices.push_back(rite);
+  if (left ) indices.push_back(left);
+  if () indices.push_back(rite);
   return indices;
 }
 

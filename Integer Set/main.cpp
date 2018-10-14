@@ -1,3 +1,4 @@
+#include <iostream>
 #include "MaxIntSet.hpp"
 #include "IntegerSet.hpp"
 
