@@ -9,6 +9,7 @@ Bucket::Bucket() {
   std::vector<int> store;
 }
 
+/* Basic operations */
 void Bucket::push(int value) {
   store.push_back(value);
 }
