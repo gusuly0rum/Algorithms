@@ -2,13 +2,14 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
+#include "Bucket.hpp"
 #include "IntegerSet.hpp"
 
 /* constructor */
 IntegerSet::IntegerSet() {
   count = 0;
   numBuckets = 5;
-  store = new int*[numBuckets];
+  Bucket* store[numBuckets];
   fill();
 }
 
@@ -16,20 +17,21 @@ IntegerSet::IntegerSet() {
 void IntegerSet::insert(int val) {
   if (count == numBuckets) resize();
   int internal = bucketIndex(val, numBuckets);
-  int* bucket = store[internal];
-  store[internal][length(bucket)] = val;
+  Bucket* bucket = store[internal];
+  bucket->push(val);
   count++;
 }
 
 void IntegerSet::remove(int val) {
-  int* bucket = store[bucketIndex(val, numBuckets)];
-  bucket[0] = 0;
+  Bucket* bucket = store[bucketIndex(val, numBuckets)];
+  bucket->remove(val);
   count--;
 }
 
 bool IntegerSet::includes(int val) const {
-  int* bucket = store[bucketIndex(val, numBuckets)];
-  return !!bucket[0];
+  int internal = bucketIndex(val, numBuckets);
+  Bucket* bucket = store[internal];
+  return bucket->includes(val);
 }
 
 /* debugger */
@@ -50,7 +52,7 @@ void IntegerSet::print() const {
 /* private */
 void IntegerSet::fill() {
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
-    store[indexRow] = new int[numBuckets];
+    store[indexRow] = new Bucket;
     for (int indexCol = 0; indexCol < numBuckets; indexCol++) {
       store[indexRow][indexCol] = 0;
     }

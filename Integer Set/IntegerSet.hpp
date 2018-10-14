@@ -1,9 +1,11 @@
+#include "Bucket.hpp"
+
 class IntegerSet {
 private:
   // member variables
   int count;
   int numBuckets;
-  int** store;
+  Bucket** store;
   
 public:
   // constructor
