@@ -1,5 +1,6 @@
 #include <string>
 #include <sstream>
+#include <iostream>
 #include "HashSet.hpp"
 
 /* constructor */
@@ -34,6 +35,22 @@ bool HashSet::includes(int value) const {
     if (bucket[index] == value) return true;
   }
   return false;
+}
+
+
+/* debugger */
+void HashSet::print() const {
+  std::cout << "\n{\n";
+  for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
+    std::cout << "{ ";
+    for (int indexCol = 0; indexCol < store[indexRow].size(); indexCol++) {
+      std::cout << store[indexRow][indexCol];
+      if (indexCol < store[indexRow].size() - 1) std::cout << ", ";
+    }
+    std::cout << " }";
+    if (indexRow < numBuckets - 1) std::cout << ",\n";
+  }
+  std::cout << "\n}\n" << std::endl;
 }
 
 

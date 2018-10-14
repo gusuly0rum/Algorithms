@@ -15,6 +15,9 @@ public:
   void remove(int value);
   bool includes(int value) const;
   
+  // debugger
+  void print() const;
+  
 private:
   // internal members
   void resize();
