@@ -2,7 +2,6 @@
 #include <vector>
 #include <sstream>
 #include <iostream>
-#include "Bucket.hpp"
 #include "IntegerSet.hpp"
 
 /* constructor */
@@ -14,24 +13,28 @@ IntegerSet::IntegerSet() {
 }
 
 /* basic operations */
+int IntegerSet::length() const {
+  return count;
+}
+
 void IntegerSet::insert(int val) {
   if (count == numBuckets) resize();
   int internal = bucketIndex(val, numBuckets);
-  Bucket* bucket = store[internal];
-  bucket->push(val);
+  Bucket bucket = store[internal];
+  bucket.push(val);
   count++;
 }
 
 void IntegerSet::remove(int val) {
-  Bucket* bucket = store[bucketIndex(val, numBuckets)];
-  bucket->remove(val);
+  Bucket bucket = store[bucketIndex(val, numBuckets)];
+  bucket.remove(val);
   count--;
 }
 
 bool IntegerSet::includes(int val) const {
   int internal = bucketIndex(val, numBuckets);
-  Bucket* bucket = store[internal];
-  return bucket->includes(val);
+  Bucket bucket = store[internal];
+  return bucket.includes(val);
 }
 
 /* debugger */
@@ -52,7 +55,7 @@ void IntegerSet::print() const {
 /* private */
 void IntegerSet::fill() {
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
-    store[indexRow] = new Bucket;
+    store[indexRow] = *(new Bucket);
     for (int indexCol = 0; indexCol < numBuckets; indexCol++) {
       store[indexRow][indexCol] = 0;
     }
@@ -78,21 +81,21 @@ int IntegerSet::hash(int val) const {
 void IntegerSet::resize() {
   int value;
   int bucketIdx;
-  Bucket* bucket;
+  Bucket bucket;
   int new_buckets = numBuckets * 2;
-  Bucket* new_store[new_buckets];
+  Bucket new_store[new_buckets];
   
   for (int indexRow = 0; indexRow < new_buckets; indexRow++) {
-    new_store[indexRow] = new Bucket;
+    new_store[indexRow] = *(new Bucket);
   }
   
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     bucket = store[indexRow];
-    for (int indexCol = 0; indexCol < bucket->length(); indexCol++) {
+    for (int indexCol = 0; indexCol < bucket.length(); indexCol++) {
       value = bucket[indexCol];
       bucketIdx = bucketIndex(value, new_buckets);
       bucket = new_store[bucketIdx];
-      bucket[length(bucket)] = value;
+      bucket.push(value);
     }
   }
   

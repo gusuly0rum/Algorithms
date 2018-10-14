@@ -1,5 +1,4 @@
 #include <string>
-#include <vector>
 #include <sstream>
 #include <iostream>
 #include "Bucket.hpp"
@@ -15,6 +14,10 @@ int& Bucket::operator[](int index) {
 }
 
 /* Basic Operations */
+int Bucket::length() const {
+  return (int) store.size();
+}
+
 void Bucket::push(int value) {
   store.push_back(value);
 }

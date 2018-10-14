@@ -5,7 +5,7 @@ private:
   // member variables
   int count;
   int numBuckets;
-  Bucket** store;
+  Bucket* store;
   
 public:
   // constructor
