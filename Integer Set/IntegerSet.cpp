@@ -8,7 +8,7 @@
 IntegerSet::IntegerSet() {
   count = 0;
   numBuckets = 5;
-  Bucket store[numBuckets];
+  store = new Bucket[numBuckets];
   fill();
 }
 
@@ -42,9 +42,9 @@ void IntegerSet::print() const {
   std::cout << "\n{\n";
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     std::cout << "{ ";
-    for (int indexCol = 0; indexCol < numBuckets; indexCol++) {
+    for (int indexCol = 0; indexCol < store[indexRow].length(); indexCol++) {
       std::cout << store[indexRow][indexCol];
-      if (indexCol < numBuckets - 1) std::cout << ", ";
+      if (indexCol < store[indexRow].length() - 1) std::cout << ", ";
     }
     std::cout << " }";
     if (indexRow < numBuckets - 1) std::cout << ",\n";
@@ -56,9 +56,6 @@ void IntegerSet::print() const {
 void IntegerSet::fill() {
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     store[indexRow] = *(new Bucket);
-    for (int indexCol = 0; indexCol < numBuckets; indexCol++) {
-      store[indexRow][indexCol] = 0;
-    }
   }
 }
 
@@ -83,7 +80,7 @@ void IntegerSet::resize() {
   int bucketIdx;
   Bucket bucket;
   int new_buckets = numBuckets * 2;
-  Bucket new_store[new_buckets];
+  Bucket* new_store = new Bucket[new_buckets];
   
   for (int indexRow = 0; indexRow < new_buckets; indexRow++) {
     new_store[indexRow] = *(new Bucket);
