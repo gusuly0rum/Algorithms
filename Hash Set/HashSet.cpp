@@ -32,11 +32,7 @@ void HashSet::remove(int value) {
 bool HashSet::includes(int value) const {
   int internal = bucketIndex(value, numBuckets);
   std::vector<int> bucket = store[internal];
-  return std::find(bucket.begin(), bucket.end(), value) == bucket.end();
-//  for (int index = 0; index < bucket.size(); index++) {
-//    if (bucket[index] == value) return true;
-//  }
-//  return false;
+  return std::find(bucket.begin(), bucket.end(), value) != bucket.end();
 }
 
 
