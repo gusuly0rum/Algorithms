@@ -2,13 +2,21 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 #include "HashSet.hpp"
 
 /* constructor */
 HashSet::HashSet() {
   this->count = 0;
   this->numBuckets = 5;
-  std::vector<int> store[numBuckets];
+  std::vector<int> temp[numBuckets];
+  this->store = temp;
+  std::cout << store[0].size() << std::endl;
+  std::cout << store[1].size() << std::endl;
+  std::cout << store[2].size() << std::endl;
+  std::cout << store[3].size() << std::endl;
+  std::cout << store[4].size() << std::endl;
+//  fill();
 }
 
 
@@ -32,27 +40,41 @@ void HashSet::remove(int value) {
 bool HashSet::includes(int value) const {
   int internal = bucketIndex(value, numBuckets);
   std::vector<int> bucket = store[internal];
-  for (int index = 0; index < bucket.size(); index++) {
-    if (bucket[index] == value) return true;
-  }
-  return false;
+  return std::find(bucket.begin(), bucket.end(), value) == bucket.end();
+//  for (int index = 0; index < bucket.size(); index++) {
+//    if (bucket[index] == value) return true;
+//  }
+//  return false;
 }
 
 
 /* debugger */
+
+
 void HashSet::print() const {
-  std::cout << "\n{\n";
-  for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
-    std::cout << "{ ";
-    for (int indexCol = 0; indexCol < store[indexRow].size(); indexCol++) {
-      std::cout << store[indexRow][indexCol];
-      if (indexCol < store[indexRow].size() - 1) std::cout << ", ";
-    }
-    std::cout << " }";
-    if (indexRow < numBuckets - 1) std::cout << ",\n";
-  }
-  std::cout << "\n}\n" << std::endl;
+  std::cout << store[0].size() << std::endl;
+  std::cout << store[1].size() << std::endl;
+  std::cout << store[2].size() << std::endl;
+  std::cout << store[3].size() << std::endl;
+  std::cout << store[4].size() << std::endl;
 }
+
+//void HashSet::print() const {
+//  int length;
+//  std::cout << "\n{\n";
+//  for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
+//    std::cout << "{ ";
+//    length = (int) store[indexRow].size();
+//    std::cout << length << std::endl;
+//    for (int indexCol = 0; indexCol < length; indexCol++) {
+////      std::cout << store[indexRow][indexCol];
+//      if (indexCol < store[indexRow].size() - 1) std::cout << ", ";
+//    }
+//    std::cout << " }";
+//    if (indexRow < numBuckets - 1) std::cout << ",\n";
+//  }
+//  std::cout << "\n}\n" << std::endl;
+//}
 
 
 /* private */
@@ -76,6 +98,13 @@ int HashSet::indexAt(std::vector<int> bucket, int value) const {
   return -1;
 }
 
+void HashSet::fill() {
+  for (int bucketIdx = 0; bucketIdx < numBuckets; bucketIdx++) {
+    store[bucketIdx].clear();
+    std::cout << "!" << std::endl;
+  }
+}
+
 void HashSet::resize() {
   int value;
   int newIndex;
@@ -90,7 +119,7 @@ void HashSet::resize() {
     }
   }
   
-  delete[] store;
-  store = newStore;
-  numBuckets = newBuckets;
+//  delete[] store;
+//  store = newStore;
+//  numBuckets = newBuckets;
 }

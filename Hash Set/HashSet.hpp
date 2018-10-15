@@ -20,6 +20,7 @@ public:
   
 private:
   // internal members
+  void fill();
   void resize();
   int hash(int value) const;
   int bucketIndex(int value, int nBuckets) const;
