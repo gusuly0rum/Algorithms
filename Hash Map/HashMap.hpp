@@ -1,4 +1,4 @@
-#include "../Linked List/LinkedList.hpp"
+#include "LinkedList.hpp"
 
 class HashMap {
   // member variables
