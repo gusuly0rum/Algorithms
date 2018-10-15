@@ -11,7 +11,8 @@ public:
   HashMap();
   
   // accessors
-  int& operator[](int key);
+  int get(int key) const;
+  void set(int key, int val);
   
   // basic operations
   void remove(int key);

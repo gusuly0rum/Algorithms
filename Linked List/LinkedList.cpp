@@ -1,3 +1,4 @@
+#include <iostream>
 #include "LinkedList.hpp"
 
 /* constructor */
@@ -78,8 +79,8 @@ void LinkedList::print() const {
   Node* node = first();
   std::cout << "{ ";
   while (node != tail) {
-    if (iter < count) std::cout << "[" << node->key << ", " << node->val << "], ";
-    if (iter == count) std::cout << "[" << node->key << ", " << node->val << "]";
+    if (iter < count) std::cout << "[" << node->key << "," << node->val << "], ";
+    if (iter == count) std::cout << "[" << node->key << "," << node->val << "]";
     iter++;
     node = node->next;
   }
