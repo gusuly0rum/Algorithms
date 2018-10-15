@@ -3,8 +3,8 @@
 /* constructor */
 LinkedList::LinkedList() {
   count = 0;
-  head = new Node(NULL);
-  tail = new Node(NULL);
+  head = new Node;
+  tail = new Node;
   head -> next = tail;
   tail -> prev = head;
 }

@@ -18,9 +18,12 @@ public:
   bool includes(int key) const;
   
   // debugger
+  void print() const;
   
 private:
   // private members
   void resize();
   void insert(int value);
+  int hash(int value) const;
+  int bucketIndex(int key) const;
 };
