@@ -18,11 +18,11 @@ public:
   Node* last() const;
   
   // basic operations
-  void push(int value);
-  void remove(int value);
+  void push(int key, int val);
+  void remove(int key);
   bool isEmpty() const;
-  bool includes(int value) const;
-  Node* find(int value) const;
+  bool includes(int key) const;
+  Node* find(int key) const;
   
   // debugger
   void print() const;

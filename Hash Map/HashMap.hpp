@@ -25,5 +25,5 @@ private:
   void resize();
   void insert(int value);
   int hash(int value) const;
-  int bucketIndex(int key) const;
+  int bucketIndex(int key, int nBuckets) const;
 };

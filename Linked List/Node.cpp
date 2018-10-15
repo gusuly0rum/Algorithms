@@ -1,9 +1,9 @@
 #include "Node.hpp"
 
 /* constructor */
-Node::Node(int val, int key) {
+Node::Node(int key, int val) {
   this->key = key;
-  this->value = val;
+  this->val = val;
   this->next = nullptr;
   this->prev = nullptr;
 }

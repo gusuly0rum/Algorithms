@@ -5,13 +5,13 @@ LinkedList::LinkedList() {
   count = 0;
   head = new Node;
   tail = new Node;
-  head -> next = tail;
-  tail -> prev = head;
+  head->next = tail;
+  tail->prev = head;
 }
 
 LinkedList::~LinkedList() {
   while (!isEmpty()) {
-    last() -> destroy();
+    last()->destroy();
   }
 }
 
@@ -19,51 +19,51 @@ LinkedList::~LinkedList() {
 
 // O(1)
 Node* LinkedList::first() const {
-  return head -> next;
+  return head->next;
 }
 
 // O(1)
 Node* LinkedList::last() const {
-  return tail -> prev;
+  return tail->prev;
 }
 
 // O(1)
-void LinkedList::push(int value) {
-  Node* node = new Node(value);
-  node -> next = tail;
-  node -> prev = last();
-  last() -> next = node;
-  tail -> prev = node;
+void LinkedList::push(int key, int val) {
+  Node* node = new Node(key, val);
+  node->next = tail;
+  node->prev = last();
+  last()->next = node;
+  tail->prev = node;
   count++;
 }
 
 // O(n)
-void LinkedList::remove(int value) {
-  Node* node = find(value);
-  node -> destroy();
+void LinkedList::remove(int key) {
+  Node* node = find(key);
+  node->destroy();
   count--;
 }
 
 // O(n)
-Node* LinkedList::find(int value) const {
+Node* LinkedList::find(int key) const {
   Node* node = first();
   while (node != tail) {
-    if (node -> value == value) {
+    if (node->key == key) {
       return node;
     }
-    node = node -> next;
+    node = node->next;
   }
   return nullptr;
 }
 
 // O(n)
-bool LinkedList::includes(int value) const {
+bool LinkedList::includes(int key) const {
   Node* node = first();
   while (node != tail) {
-    if (node -> value == value) {
+    if (node->key == key) {
       return true;
     }
-    node = node -> next;
+    node = node->next;
   }
   return false;
 }
@@ -78,10 +78,10 @@ void LinkedList::print() const {
   Node* node = first();
   std::cout << "{ ";
   while (node != tail) {
-    if (iter < count) std::cout << node -> value << ", ";
-    if (iter == count) std::cout << node -> value;
+    if (iter < count) std::cout << "[" << node->key << ", " << node->val << "], ";
+    if (iter == count) std::cout << "[" << node->key << ", " << node->val << "]";
     iter++;
-    node = node -> next;
+    node = node->next;
   }
   std::cout << " }" << std::endl;
 }

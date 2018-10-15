@@ -1,3 +1,5 @@
+#include <string>
+#include <sstream>
 #include <iostream>
 #include "HashMap.hpp"
 
@@ -10,39 +12,33 @@ HashMap::HashMap() {
 
 /* accessors */
 int& HashMap::operator[](int key) {
-  LinkedList bucket = store[bucketIndex(key)];
+  int internal = bucketIndex(key, numBuckets);
+  LinkedList bucket = store[internal];
   Node* node = bucket.find(key);
-  return node->value;
+  return node->val;
 }
 
 /* basic operations */
 void HashMap::remove(int key) {
+  int internal = bucketIndex(key, numBuckets);
+  LinkedList bucket = store[internal];
+  bucket.remove(key);
 }
 
 bool HashMap::includes(int key) const {
-  return 0;
-}
-
-/* debugger */
-void HashMap::print() const {
-  std::cout << "\n{\n";
-  for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
-    std::cout << "{ ";
-    for (int indexCol = 0; indexCol < store[indexRow].size(); indexCol++) {
-      std::cout << store[indexRow][indexCol];
-      if (indexCol < store[indexRow].size() - 1) std::cout << ", ";
-    }
-    std::cout << " }";
-    if (indexRow < numBuckets - 1) std::cout << ",\n";
-  }
-  std::cout << "\n}\n" << std::endl;
+  int internal = bucketIndex(key, numBuckets);
+  LinkedList bucket = store[internal];
+  return bucket.includes(key);
 }
 
 /* private */
 void HashMap::insert(int value) {
 }
 
-int HashMap::bucketIndex(int key) const {
+int HashMap::bucketIndex(int key, int nBuckets) const {
+  int hashValue = hash(key);
+  if (hashValue >= 0) return hashValue % nBuckets;
+  return (-1 * hashValue) % nBuckets;
 }
 
 int HashMap::hash(int value) const {
