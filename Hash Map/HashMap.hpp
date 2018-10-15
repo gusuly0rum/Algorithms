@@ -15,11 +15,12 @@ public:
   
   // basic operations
   void remove(int key);
-  bool includes(int key);
+  bool includes(int key) const;
   
   // debugger
   
 private:
   // private members
   void resize();
+  void insert(int value);
 };
