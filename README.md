@@ -11,7 +11,7 @@ A repository created to study data structures and stuff like that.
 - [x] Dynamic Array
 - [ ] Graph
 - [ ] Hash Map
-- [ ] Hash Set
+- [x] Hash Set
 - [ ] Heap Sort
 - [x] Integer Set
 - [ ] Kahn's Algorithm
