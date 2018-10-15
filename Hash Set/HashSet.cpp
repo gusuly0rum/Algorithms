@@ -13,11 +13,16 @@ HashSet::HashSet() {
 
 
 /* basic operations */
+int HashSet::length() const {
+  return count;
+}
+
 // O(1)
 void HashSet::insert(int value) {
   int internal = bucketIndex(value, numBuckets);
   std::vector<int>* bucket = &store[internal];
   bucket->push_back(value);
+  count++;
 }
 
 // O(1) but worst case O(k)
@@ -25,7 +30,9 @@ void HashSet::remove(int value) {
   int internal = bucketIndex(value, numBuckets);
   std::vector<int>* bucket = &store[internal];
   int index = indexAt(*bucket, value);
+  if (index == -1) return;
   bucket->erase(bucket->begin() + index);
+  count--;
 }
 
 // O(1) but worst case O(k)
@@ -34,7 +41,6 @@ bool HashSet::includes(int value) const {
   std::vector<int> bucket = store[internal];
   return std::find(bucket.begin(), bucket.end(), value) != bucket.end();
 }
-
 
 /* debugger */
 void HashSet::print() const {

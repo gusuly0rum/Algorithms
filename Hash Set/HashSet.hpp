@@ -11,6 +11,7 @@ public:
   HashSet();
   
   // basic operations
+  int length() const;
   void insert(int value);
   void remove(int value);
   bool includes(int value) const;
