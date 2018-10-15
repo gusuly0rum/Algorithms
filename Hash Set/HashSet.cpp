@@ -19,6 +19,8 @@ int HashSet::length() const {
 
 // O(1)
 void HashSet::insert(int value) {
+  if (includes(value)) return;
+  if (count == numBuckets) resize();
   int internal = bucketIndex(value, numBuckets);
   std::vector<int>* bucket = &store[internal];
   bucket->push_back(value);
@@ -93,7 +95,7 @@ void HashSet::resize() {
     }
   }
   
-//  delete[] store;
-//  store = newStore;
-//  numBuckets = newBuckets;
+  delete[] store;
+  store = newStore;
+  numBuckets = newBuckets;
 }
