@@ -13,13 +13,13 @@ HashMap::HashMap() {
 /* accessors */
 int HashMap::get(int key) const {
   int internal = bucketIndex(key, numBuckets);
-  LinkedList bucket = store[internal];
-  Node* node = bucket.find(key);
+  LinkedList* bucket = &store[internal];
+  Node* node = bucket->find(key);
   return node->val;
 }
 
 void HashMap::set(int key, int val) {
-//  if (count == numBuckets) resize();
+  if (count == numBuckets) resize();
   int internal = bucketIndex(key, numBuckets);
   LinkedList* bucket = &store[internal];
   bucket->push(key, val);
@@ -34,8 +34,8 @@ void HashMap::remove(int key) {
 
 bool HashMap::includes(int key) const {
   int internal = bucketIndex(key, numBuckets);
-  LinkedList bucket = store[internal];
-  return bucket.includes(key);
+  LinkedList* bucket = &store[internal];
+  return bucket->includes(key);
 }
 
 /* debugger */
@@ -61,5 +61,21 @@ int HashMap::hash(int value) const {
   return (int) hasher(string.str());
 }
 
-//void HashMap::resize() {
-//}
+void HashMap::resize() {
+  int value;
+  int newIndex;
+  int newBuckets = numBuckets * 2;
+  LinkedList* newStore = new LinkedList[newBuckets];
+  
+  for (int bucketIdx = 0; bucketIdx < numBuckets; bucketIdx++) {
+    for (int index = 0; index < store[bucketIdx].count; index++) {
+//      value = store[bucketIdx][index];
+//      newIndex = bucketIndex(value, newBuckets);
+//      newStore[newIndex].push_back(value);
+    }
+  }
+  
+  delete[] store;
+  store = newStore;
+  numBuckets = newBuckets;
+}

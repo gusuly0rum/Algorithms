@@ -49,9 +49,7 @@ void LinkedList::remove(int key) {
 Node* LinkedList::find(int key) const {
   Node* node = first();
   while (node != tail) {
-    if (node->key == key) {
-      return node;
-    }
+    if (node->key == key) return node;
     node = node->next;
   }
   return nullptr;
