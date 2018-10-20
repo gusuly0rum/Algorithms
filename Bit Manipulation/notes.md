@@ -1,43 +1,43 @@
 # Bit Manipulation
 
-representation of 1 using 3 bits is 001
-representation of 2 using 3 bits is 010
-representation of 3 using 3 bits is 011
-001 XOR 010 is 011
-001    ^    010 is 011
+representation of 1 using 3 bits is 001  
+representation of 2 using 3 bits is 010  
+representation of 3 using 3 bits is 011  
+001 XOR 010 is 011  
+001    ^    010 is 011  
 1 ^ 2 is 3
 
-001 XOR 011 is 010
-001    ^    011 is 010
+001 XOR 011 is 010  
+001    ^    011 is 010  
 1 ^ 2 is 3
 
-representation of 1 using 2 bits is 01
-representation of 2 using 2 bits is 10
-representation of 3 using 2 bits is 11
-01 XOR 11 is 10
-01    ^    11 is 10
+representation of 1 using 2 bits is 01  
+representation of 2 using 2 bits is 10  
+representation of 3 using 2 bits is 11  
+01 XOR 11 is 10  
+01    ^    11 is 10  
 1 ^ 3 is 2
 
-01 XOR 11 is 10
-01    ^    11 is 10
+01 XOR 11 is 10  
+01    ^    11 is 10  
 1 ^ 3 is 2
 
 The amount is bits used to represent numbers in a computer depends on the computer (32 bit, 64 bit is called word size)
 
 [1,2,3] ^ [1,2]
 
-01		1
+01		1  
 10		2
-___
-11		3*
+___  
+11		3*  
 11		3
-___
-00		0*
+___  
+00		0*  
 10		1
-___
-10		1*
+___  
+10		1*  
 01		2
-___
+___  
 11		3
 
 So the missing element is 3
