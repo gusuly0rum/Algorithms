@@ -23,13 +23,13 @@ int BinaryMaxHeap::extract() {
   int maximum = max();
   store[0] = store.back();
   store.pop_back();
-  heapifyDown();
+  heapifyDown(store, 0);
   return maximum;
 }
 
 void BinaryMaxHeap::insert(int value) {
   store.push_back(value);
-  BinaryMaxHeap::heapifyUp(store, count() - 1, count());
+  BinaryMaxHeap::heapifyUp(store, count() - 1);
 }
 
 // helper methods
@@ -59,7 +59,7 @@ void BinaryMaxHeap::heapifyUp(std::vector<int>& array, int childIndex) {
   if (child > parent) {
     array[childIndex] = parent;
     array[parentIndex] = child;
-    BinaryMaxHeap::heapifyUp(array, parentIndex, length);
+    BinaryMaxHeap::heapifyUp(array, parentIndex);
   }
 }
 
