@@ -34,6 +34,16 @@ void BinaryMaxHeap::insert(int value) {
 
 // private
 void BinaryMaxHeap::heapifyUp() {
+  int childIdx = count() - 1;
+  int parentIdx = parentIndex(count() - 1);
+  int child = store[childIdx];
+  int parent = store[parentIdx];
+  
+  if (child > parent) {
+    store[childIdx] = parent;
+    store[parentIdx] = child;
+    heapifyUp();
+  }
 }
 
 void BinaryMaxHeap::heapifyDown() {
@@ -41,7 +51,7 @@ void BinaryMaxHeap::heapifyDown() {
 
 int BinaryMaxHeap::parentIndex(int childIndex) {
   int index = (childIndex - 1) / 2;
-  if (index < 0) raise();
+  checkIndex(index);
   return index;
 }
 
@@ -49,11 +59,13 @@ std::vector<int> BinaryMaxHeap::childIndices(int parentIndex) {
   std::vector<int> indices;
   int left = (parentIndex * 2 + 1);
   int rite = (parentIndex * 2 + 2);
-  if (left ) indices.push_back(left);
-  if () indices.push_back(rite);
+  if (left < count()) indices.push_back(left);
+  if (rite < count()) indices.push_back(rite);
   return indices;
 }
 
-void BinaryMaxHeap::raise() {
-  throw std::out_of_range("Root has no parent");
+void BinaryMaxHeap::checkIndex(int index) {
+  if (index < 0) {
+    throw std::out_of_range("Root has no parent");
+  }
 }

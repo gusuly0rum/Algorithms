@@ -17,15 +17,16 @@ public:
   int extract();
   void insert(int value);
   
+  // helper methodss
+  static int parentIndex(int childIndex);
+  static std::vector<int> childIndices(int parentIndex);
+  
+  // advanced operations
+  static void heapifyUp();
+  static void heapifyDown();
+  
 private:
   // internal members
-  void heapifyUp();
-  void heapifyDown();
-  
-  int parentIndex(int childIndex);
-  std::vector<int> childIndices(int parentIndex);
-  
-  // errors
-  void raise();
+  void checkIndex(int index);
 };
 
