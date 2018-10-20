@@ -24,9 +24,5 @@ public:
   // advanced operations
   static void heapifyUp();
   static void heapifyDown();
-  
-private:
-  // internal members
-  void checkIndex(int index);
 };
 
