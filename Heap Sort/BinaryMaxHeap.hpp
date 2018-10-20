@@ -4,6 +4,7 @@
 
 class BinaryMaxHeap {
   // member variables
+public:
   std::vector<int> store;
   
 public:
@@ -17,12 +18,15 @@ public:
   int extract();
   void insert(int value);
   
-  // helper methodss
+  // helper methods
   static int parentIndex(int childIndex);
-  static std::vector<int> childIndices(int parentIndex);
+  static std::vector<int> childIndices(int parentIndex, int count);
   
   // advanced operations
-  static void heapifyUp();
+  static void heapifyUp(std::vector<int>& array, int childIndex, int length);
   static void heapifyDown();
+  
+  // debugger
+  static void print(std::vector<int>& array);
 };
 
