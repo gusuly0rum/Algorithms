@@ -1,3 +1,4 @@
+#include <algorithm>
 #include "BinaryMaxHeap.hpp"
 
 // constructor
@@ -64,6 +65,26 @@ void BinaryMaxHeap::heapifyUp(std::vector<int>& array, int childIndex) {
 }
 
 void BinaryMaxHeap::heapifyDown(std::vector<int>& array, int parentIndex) {
+  if (parentIndex >= array.size()) return;
+  
+  std::vector<int> indices = BinaryMaxHeap::childIndices(parentIndex, (int) array.size());
+  int childIndex = BinaryMaxHeap::index_of_min(array, indices);
+  int parent = array[parentIndex];
+  int child = array[childIndex];
+  
+  if (parent < child) {
+    array[childIndex] = parent;
+    array[parentIndex] = child;
+    BinaryMaxHeap::heapifyDown(array, childIndex);
+  }
+}
+
+int BinaryMaxHeap::index_of_min(std::vector<int> array, std::vector<int> indices) {
+  if (indices.size() == 1) return indices.front();
+  
+  int left = indices[0];
+  int rite = indices[1];
+  return array[left] >= indices[rite] ? left : rite;
 }
 
 // debugger
