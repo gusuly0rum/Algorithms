@@ -1,6 +1,7 @@
 #include "BinaryMaxHeap.hpp"
 
 int main() {
+  
   BinaryMaxHeap bmh;
   for (int k = 0; k < 6; k++) {
     bmh.insert(k);
