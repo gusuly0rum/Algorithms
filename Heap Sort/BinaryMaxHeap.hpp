@@ -21,7 +21,7 @@ public:
   // helper methods
   static int parentIndex(int childIndex);
   static std::vector<int> childIndices(int parentIndex, int count);
-  static int index_of_min(std::vector<int> array, std::vector<int> indices);
+  static int index_of_max(std::vector<int>& array, std::vector<int>& indices);
   
   // advanced operations
   static void heapifyUp(std::vector<int>& array, int childIndex);

@@ -9,6 +9,8 @@ int main() {
   BinaryMaxHeap::print(bmh.store);
   bmh.extract();
   BinaryMaxHeap::print(bmh.store);
+  bmh.extract();
+  BinaryMaxHeap::print(bmh.store);
   
   return 0;
 }
