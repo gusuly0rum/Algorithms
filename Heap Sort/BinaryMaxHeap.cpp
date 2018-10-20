@@ -49,7 +49,7 @@ std::vector<int> BinaryMaxHeap::childIndices(int parentIndex, int count) {
 }
 
 // advanced methods
-void BinaryMaxHeap::heapifyUp(std::vector<int>& array, int childIndex, int length) {
+void BinaryMaxHeap::heapifyUp(std::vector<int>& array, int childIndex) {
   if (childIndex == 0) return;
   
   int parentIndex = BinaryMaxHeap::parentIndex(childIndex);
@@ -63,7 +63,7 @@ void BinaryMaxHeap::heapifyUp(std::vector<int>& array, int childIndex, int lengt
   }
 }
 
-void BinaryMaxHeap::heapifyDown() {
+void BinaryMaxHeap::heapifyDown(std::vector<int>& array, int parentIndex) {
 }
 
 // debugger

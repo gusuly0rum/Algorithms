@@ -23,8 +23,8 @@ public:
   static std::vector<int> childIndices(int parentIndex, int count);
   
   // advanced operations
-  static void heapifyUp(std::vector<int>& array, int childIndex, int length);
-  static void heapifyDown();
+  static void heapifyUp(std::vector<int>& array, int childIndex);
+  static void heapifyDown(std::vector<int>& array, int parentIndex);
   
   // debugger
   static void print(std::vector<int>& array);
