@@ -18,10 +18,12 @@ int main() {
   
   // test case heapsort
   std::vector<int> array { 0, 1, 2, 3, 4, 5 };
-  std::vector<int> result = heapsort(array);
-  BinaryMaxHeap::print(result);
+  std::vector<int> result1 = heapsort(array);
+  BinaryMaxHeap::print(result1);
   
   // test case heapsort inplace
+  std::vector<int> result2 = heapsortInplace(array);
+  BinaryMaxHeap::print(result2);
   
   return 0;
 }
