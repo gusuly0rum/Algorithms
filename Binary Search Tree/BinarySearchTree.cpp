@@ -10,6 +10,7 @@ BinarySearchTree::~BinarySearchTree() {
 }
 
 /* basic operations */
+// O(log(n))
 BSTNode* BinarySearchTree::insert(int value) {
   BSTNode* node = new BSTNode(value);
   if (root == nullptr) {
@@ -20,6 +21,7 @@ BSTNode* BinarySearchTree::insert(int value) {
   return node;
 }
 
+// O(log(n))
 void BinarySearchTree::remove(int value) {
   std::vector<BSTNode*> pair = getTarget(value);
   BSTNode* target = pair[0];
@@ -60,6 +62,7 @@ void BinarySearchTree::remove(int value) {
   }
 }
 
+// O(log(n))
 BSTNode* BinarySearchTree::find(int value) const {
   BSTNode* node = root;
   while (node) {
@@ -69,6 +72,7 @@ BSTNode* BinarySearchTree::find(int value) const {
   return nullptr;
 }
 
+// O(log(n))
 bool BinarySearchTree::includes(int value) const {
   BSTNode* node = root;
   while (node) {

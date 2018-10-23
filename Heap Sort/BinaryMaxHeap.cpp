@@ -20,6 +20,7 @@ int BinaryMaxHeap::max() {
   return store.front();
 }
 
+// O(log(n))
 int BinaryMaxHeap::extract() {
   int maximum = max();
   store[0] = store.back();
@@ -28,6 +29,7 @@ int BinaryMaxHeap::extract() {
   return maximum;
 }
 
+// O(log(n))
 void BinaryMaxHeap::insert(int value) {
   store.push_back(value);
   BinaryMaxHeap::heapifyUp(store, count() - 1);
