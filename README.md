@@ -12,15 +12,14 @@ A repository created to study data structures and stuff like that.
 - [ ] Graph
 - [ ] Hash Map
 - [x] Hash Set
-- [x] Heap Sort
+- [x] Heapsort
 - [x] Integer Set
 - [ ] Kahn's Algorithm
 - [x] Linked List
 - [ ] LRU Cache
-- [x] Merge Sort
-- [ ] Polytree
+- [x] Mergesort
 - [ ] Queue
-- [ ] Quick Sort
+- [x] Quicksort
 - [x] Ring Buffer
 - [ ] Stack
 - [ ] Tarjan's Algorithm
