@@ -3,7 +3,7 @@
 
 int main() {
   
-  // test case 1
+  // test case wasteful
   std::vector<int> array1 { 5, 4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 0 };
   print(quicksort(array1));
   
