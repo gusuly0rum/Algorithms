@@ -11,7 +11,7 @@ void print(std::vector<int> array) {
   std::cout << " }\n" << std::endl;
 }
 
-// naive implementation
+// nlog(n) but worst case n^2
 std::vector<int> quicksort(std::vector<int> array) {
   int length = (int) array.size();
   if (length <= 1) return array;
@@ -43,7 +43,7 @@ std::vector<int> quicksort(std::vector<int> array) {
 }
 
 
-// inplace implementation
+// nlog(n) but worst case n^2
 void quicksortInplace(std::vector<int>& array, int start, int end) {
   if (end <= start) return;
   int wall = partition(array, start, end);
