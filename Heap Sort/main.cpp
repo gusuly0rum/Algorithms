@@ -5,6 +5,7 @@ int main() {
   
   // test case BMH::insert
   BinaryMaxHeap bmh;
+  std::vector<int> array { 0, 1, 2, 3, 4, 5 };
   for (int k = 0; k < 6; k++) {
     bmh.insert(k);
   }
@@ -17,7 +18,6 @@ int main() {
   BinaryMaxHeap::print(bmh.store);
   
   // test case heapsort
-  std::vector<int> array { 0, 1, 2, 3, 4, 5 };
   std::vector<int> result1 = heapsort(array);
   BinaryMaxHeap::print(result1);
   

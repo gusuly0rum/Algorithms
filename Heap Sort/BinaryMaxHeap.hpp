@@ -25,7 +25,7 @@ public:
   
   // advanced operations
   static void heapifyUp(std::vector<int>& array, int childIndex);
-  static void heapifyDown(std::vector<int>& array, int parentIndex);
+  static void heapifyDown(std::vector<int>& array, int parentIndex, int count);
   
   // debugger
   static void print(std::vector<int>& array);

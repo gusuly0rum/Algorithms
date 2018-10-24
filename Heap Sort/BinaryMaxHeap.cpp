@@ -25,7 +25,7 @@ int BinaryMaxHeap::extract() {
   int maximum = max();
   store[0] = store.back();
   store.pop_back();
-  heapifyDown(store, 0);
+  heapifyDown(store, 0, count());
   return maximum;
 }
 
@@ -75,8 +75,8 @@ void BinaryMaxHeap::heapifyUp(std::vector<int>& array, int childIndex) {
   }
 }
 
-void BinaryMaxHeap::heapifyDown(std::vector<int>& array, int parentIndex) {
-  std::vector<int> indices = BinaryMaxHeap::childIndices(parentIndex, (int) array.size());
+void BinaryMaxHeap::heapifyDown(std::vector<int>& array, int parentIndex, int count) {
+  std::vector<int> indices = BinaryMaxHeap::childIndices(parentIndex, (int) count);
   int childIndex = BinaryMaxHeap::index_of_max(array, indices);
   if (childIndex == -1) return;
   int parent = array[parentIndex];
@@ -85,7 +85,7 @@ void BinaryMaxHeap::heapifyDown(std::vector<int>& array, int parentIndex) {
   if (parent < child) {
     array[childIndex] = parent;
     array[parentIndex] = child;
-    BinaryMaxHeap::heapifyDown(array, childIndex);
+    BinaryMaxHeap::heapifyDown(array, childIndex, count);
   }
 }
 
