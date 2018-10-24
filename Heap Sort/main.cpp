@@ -20,8 +20,8 @@ int main() {
   BinaryMaxHeap::print(result1);
   
   // test case heapsort inplace
-  std::vector<int> result2 = heapsortInplace(array);
-  BinaryMaxHeap::print(result2);
+  heapsortInplace(array);
+  BinaryMaxHeap::print(array);
   
   return 0;
 }

@@ -17,10 +17,10 @@ std::vector<int> quicksort(std::vector<int> array) {
     element = array[index];
     if (element < pivot) {
       left.push_back(element);
-    } else if (element == pivot) {
-      pivs.push_back(element);
-    } else {
+    } else if (element > pivot) {
       rite.push_back(element);
+    } else {
+      pivs.push_back(element);
     }
   }
   
