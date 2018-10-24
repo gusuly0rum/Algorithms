@@ -44,5 +44,9 @@ std::vector<int> quicksort(std::vector<int> array) {
 
 
 // inplace implementation
-void quicksortInplace(std::vector<int>& array) {
+void quicksortInplace(std::vector<int>& array, int start, int numel) {
+}
+
+int partition(std::vector<int>& array, int start, int numel) {
+  return 0;
 }
