@@ -45,8 +45,27 @@ std::vector<int> quicksort(std::vector<int> array) {
 
 // inplace implementation
 void quicksortInplace(std::vector<int>& array, int start, int numel) {
+  if (numel <= 1) return;
+  int wall = partition(array, start, numel);
+  quicksortInplace(array, start, wall - start);
+  quicksortInplace(array, wall + 1, numel - wall - 1);
 }
 
 int partition(std::vector<int>& array, int start, int numel) {
-  return 0;
+  int element;
+  int wall = start;
+  int pivot = array[start];
+  
+  for (int k = (start + 1); k < (start + numel); k++) {
+    element = array[k];
+    if (element <= pivot) {
+      wall++;
+      array[k] = array[wall];
+      array[wall] = element;
+    }
+  }
+  
+  array[start] = array[wall];
+  array[wall] = pivot;
+  return wall;
 }
