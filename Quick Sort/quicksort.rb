@@ -8,6 +8,10 @@ class Array
     rite = self.select { |el| prc.call(pivot_element, el) == -1 }
     return left.quicksort(&prc) + pivs + rite.quicksort(&prc)
   end
+
+  def quicksort!
+  end
 end
 
-p [5,4,3,2,1,0,0,1,2,3,4,5].quicksort
+a = [5,4,3,2,1,0,0,1,2,3,4,5]
+a.quicksort
