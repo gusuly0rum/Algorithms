@@ -12,7 +12,7 @@ A repository created to study data structures and stuff like that.
 - [ ] Graph
 - [ ] Hash Map
 - [x] Hash Set
-- [ ] Heap Sort
+- [x] Heap Sort
 - [x] Integer Set
 - [ ] Kahn's Algorithm
 - [x] Linked List
