@@ -1,4 +1,15 @@
+#include <iostream>
 #include "Quicksort.hpp"
+
+// debugger
+void print(std::vector<int> array) {
+  std::cout << "{ ";
+  for (int index = 0; index < array.size(); index++) {
+    std::cout << array[index];
+    if (index < array.size() - 1) std::cout << ", ";
+  }
+  std::cout << " }\n" << std::endl;
+}
 
 // naive implementation
 std::vector<int> quicksort(std::vector<int> array) {
@@ -31,12 +42,7 @@ std::vector<int> quicksort(std::vector<int> array) {
   return left;
 }
 
-// debugger
-void print(std::vector<int> array) {
-  std::cout << "{ ";
-  for (int index = 0; index < array.size(); index++) {
-    std::cout << array[index];
-    if (index < array.size() - 1) std::cout << ", ";
-  }
-  std::cout << " }\n" << std::endl;
+
+// inplace implementation
+void quicksortInplace(std::vector<int>& array) {
 }
