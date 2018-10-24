@@ -9,9 +9,25 @@ class Array
     return left.quicksort(&prc) + pivs + rite.quicksort(&prc)
   end
 
-  def quicksort!
+  def quicksort!(first, last)
+    return if (last <= first)
+    wall = self.partition!(first, last)
+    self.quicksort!(first, wall - 1)
+    self.quicksort!(wall + 1, last)
+  end
+
+  def partition!(first, last)
+    wall = first
+    pivot = self[first]
+
+    for k in (first + 1)..last
+      if self[k] <= pivot
+        wall += 1
+        self[k], self[wall] = self[wall], self[k]
+      end
+    end
+
+    self[first], self[wall] = self[wall], self[first]
+    wall
   end
 end
-
-a = [5,4,3,2,1,0,0,1,2,3,4,5]
-a.quicksort
