@@ -45,8 +45,7 @@ std::vector<int> quicksort(std::vector<int> array) {
 
 // inplace implementation
 void quicksortInplace(std::vector<int>& array, int start, int end) {
-  int numel = end - start + 1;
-  if (numel <= 1) return;
+  if (end <= start) return;
   int wall = partition(array, start, end);
   quicksortInplace(array, start, wall - 1);
   quicksortInplace(array, wall + 1, end);
@@ -57,7 +56,7 @@ int partition(std::vector<int>& array, int start, int end) {
   int wall = start;
   int pivot = array[start];
 
-  for (int k = (start + 1); k < end; k++) {
+  for (int k = (start + 1); k <= end; k++) {
     element = array[k];
     if (element <= pivot) {
       wall++;
@@ -65,39 +64,8 @@ int partition(std::vector<int>& array, int start, int end) {
       array[wall] = element;
     }
   }
-
+  
   array[start] = array[wall];
   array[wall] = pivot;
   return wall;
 }
-
-
-
-//void swap(int* a, int* b)
-//{
-//  int t = *a;
-//  *a = *b;
-//  *b = t;
-//}
-//
-//int partition(std::vector<int>& arr, int low, int high) {
-//  int i = (low - 1);
-//  int pivot = arr[high];
-//
-//  for (int j = low; j < high; j++) {
-//    if (arr[j] <= pivot) {
-//      i++;
-//      swap(&arr[i], &arr[j]);
-//    }
-//  }
-//  swap(&arr[i + 1], &arr[high]);
-//  return (i + 1);
-//}
-//
-//void quicksortInplace(std::vector<int>& arr, int low, int high) {
-//  if (low < high) {
-//    int pi = partition(arr, low, high);
-//    quicksortInplace(arr, low, pi - 1);
-//    quicksortInplace(arr, pi + 1, high);
-//  }
-//}

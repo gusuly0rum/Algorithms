@@ -9,7 +9,7 @@ int main() {
   
   // test case inplace
   std::vector<int> array2 { 5, 4, 3, 2, 1, 0, 5, 4, 3, 2, 1, 0 };
-  quicksortInplace(array2, 0, (int) array2.size());
+  quicksortInplace(array2, 0, (int) array2.size() - 1);
   print(array2);
   
   return 0;
