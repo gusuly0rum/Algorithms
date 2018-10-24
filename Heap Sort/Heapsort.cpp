@@ -11,12 +11,8 @@ std::vector<int> heapsort(std::vector<int> array) {
 }
 
 std::vector<int> heapsortInplace(std::vector<int> array) {
-  int index = 0;
   int count = (int) array.size();
-  while (index < count) {
-    BinaryMaxHeap::heapifyUp(array, index);
-    index++;
-  }
+  for (int k = 0; k < count; k++) BinaryMaxHeap::heapifyUp(array, k);
   
   int temp;
   while (count > 0) {
