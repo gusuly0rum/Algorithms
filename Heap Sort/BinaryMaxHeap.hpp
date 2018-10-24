@@ -30,4 +30,3 @@ public:
   // debugger
   static void print(std::vector<int>& array);
 };
-
