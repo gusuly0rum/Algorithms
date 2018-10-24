@@ -12,6 +12,10 @@ class BinaryMinHeap
     @store.length
   end
 
+  def empty?
+    count == 0
+  end
+
   def extract
     @store[0], @store[-1] = @store[-1], @store[0]
     root_value = @store.pop
