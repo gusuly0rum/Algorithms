@@ -12,6 +12,7 @@ std::vector<int> heapsort(std::vector<int> array) {
   return result;
 }
 
+// O(nlog(n))
 void heapsortInplace(std::vector<int>& array) {
   int count = (int) array.size();
   for (int k = 0; k < count; k++) BMH::heapifyUp(array, k);
