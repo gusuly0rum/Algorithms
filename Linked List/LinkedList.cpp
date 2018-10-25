@@ -3,10 +3,10 @@
 
 /* constructor */
 LinkedList::LinkedList() : count{0} {
-  head = new Node;
-  tail = new Node;
-  head->next = tail;
-  tail->prev = head;
+  this->head = new Node;
+  this->tail = new Node;
+  this->head->next = tail;
+  this->tail->prev = head;
 }
 
 LinkedList::~LinkedList() {
