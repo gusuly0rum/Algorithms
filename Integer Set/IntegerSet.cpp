@@ -40,7 +40,7 @@ bool IntegerSet::includes(int val) const {
 
 /* debugger */
 void IntegerSet::print() const {
-  std::cout << "\n{\n";
+  std::cout << "{\n";
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     std::cout << "{ ";
     for (int indexCol = 0; indexCol < store[indexRow].length(); indexCol++) {
