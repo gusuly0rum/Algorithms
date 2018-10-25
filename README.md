@@ -2,29 +2,31 @@
 
 A repository created to study data structures and stuff like that.
 
-### Data Structures
-
-### Algorithms
-
-- [x] Binary Search
+#### Data Structures
 - [x] Binary Search Tree
-- [ ] Bit Manipulation
-- [x] Breadth First Search
-- [x] Depth First Search
-- [ ] Dijkstra's Algorithm
 - [x] Dynamic Array
 - [ ] Graph
 - [ ] Hash Map
 - [x] Hash Set
-- [x] Heapsort
 - [x] Integer Set
-- [ ] Kahn's Algorithm
 - [x] Linked List
 - [ ] LRU Cache
-- [x] Mergesort
 - [ ] Queue
-- [x] Quicksort
 - [x] Ring Buffer
 - [ ] Stack
+
+#### Algorithms
+- [x] Binary Search
+- [x] Breadth First Search
+- [x] Depth First Search
+- [ ] Dijkstra's Algorithm
+- [x] Heapsort
+- [ ] Kahn's Algorithm
+- [x] Mergesort
+- [x] Quicksort
 - [ ] Tarjan's Algorithm
 - [ ] Topological Sort
+
+#### 
+- [ ] Bit Manipulation
+
