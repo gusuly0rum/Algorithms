@@ -5,9 +5,7 @@
 #include "IntegerSet.hpp"
 
 /* constructor */
-IntegerSet::IntegerSet() {
-  count = 0;
-  numBuckets = 5;
+IntegerSet::IntegerSet() : count{0}, numBuckets{5} {
   store = new Bucket[numBuckets];
   fill();
 }
