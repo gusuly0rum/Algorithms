@@ -3,8 +3,7 @@
 #include "MaxIntSet.hpp"
 
 /* constructor */
-MaxIntSet::MaxIntSet(int max) {
-  capacity = max;
+MaxIntSet::MaxIntSet(int max) : capacity{max} {
   store = new bool[capacity];
   fill();
 }
