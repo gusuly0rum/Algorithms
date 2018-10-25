@@ -5,7 +5,7 @@
 #include "HashSet.hpp"
 
 /* constructor */
-HashSet::HashSet() : count(0), numBuckets(5) {
+HashSet::HashSet() : count{0}, numBuckets{5} {
   this->store = new std::vector<int>[numBuckets];
 }
 
@@ -44,7 +44,7 @@ bool HashSet::includes(int value) const {
 
 /* debugger */
 void HashSet::print() const {
-  std::cout << "\n{\n";
+  std::cout << "{\n";
   for (int indexRow = 0; indexRow < numBuckets; indexRow++) {
     std::cout << "{ ";
     for (int indexCol = 0; indexCol < store[indexRow].size(); indexCol++) {
