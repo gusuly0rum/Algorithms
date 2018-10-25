@@ -20,11 +20,14 @@ A repository created to study data structures and stuff like that.
 - [x] Breadth First Search
 - [x] Depth First Search
 - [ ] Dijkstra's Algorithm
-- [x] Heapsort
 - [ ] Kahn's Algorithm
+- [ ] Tarjan's Algorithm
+
+#### Sorting Algorithms
+
+- [x] Heapsort
 - [x] Mergesort
 - [x] Quicksort
-- [ ] Tarjan's Algorithm
 - [ ] Topological Sort
 
 #### Other Stuff
