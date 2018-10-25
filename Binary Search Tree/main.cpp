@@ -33,18 +33,6 @@ int main() {
   print(bst.root->rite->rite->value == 9);
   print(bst.root->rite->rite->rite->value == 10);
   sprint("");
-
-  // BST::remove test case
-  sprint("BST::remove test case");
-  bst.remove(2);
-  bst.root->printBFS();
-  bst.remove(3);
-  bst.root->printBFS();
-  bst.remove(5);
-  bst.root->printBFS();
-  bst.remove(7);
-  bst.root->printBFS();
-  sprint("");
   
   // BST::depth test case
   sprint("BST::depth test case");
@@ -58,6 +46,18 @@ int main() {
   print(bst.isBalanced(bst.root->rite) == 0);
   print(bst.isBalanced(bst.root->rite->rite) == 1);
   print(bst.isBalanced(bst.root->left->left) == 1);
+  sprint("");
+  
+  // BST::remove test case
+  sprint("BST::remove test case");
+  bst.remove(2);
+  bst.root->printBFS();
+  bst.remove(3);
+  bst.root->printBFS();
+  bst.remove(5);
+  bst.root->printBFS();
+  bst.remove(7);
+  bst.root->printBFS();
   sprint("");
 
   return 0;
