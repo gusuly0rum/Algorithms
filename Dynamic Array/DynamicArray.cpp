@@ -1,9 +1,7 @@
 #include "DynamicArray.hpp"
 
 /* Constructor & Destructor */
-DynamicArray::DynamicArray() {
-  count = 0;
-  capacity = 5;
+DynamicArray::DynamicArray() : count{0}, capacity{5} {
   store = new int[capacity];
   fill();
 }
