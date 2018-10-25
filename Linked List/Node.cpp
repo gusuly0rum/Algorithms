@@ -1,11 +1,11 @@
 #include "Node.hpp"
 
 /* constructor */
-Node::Node(int key, int val) {
-  this->key = key;
-  this->val = val;
-  this->next = nullptr;
-  this->prev = nullptr;
+Node::Node(int key, int val) :
+  key{key},
+  val{val},
+  next{nullptr},
+  prev{nullptr} {
 }
 
 /* basic operations */

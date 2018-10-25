@@ -2,8 +2,7 @@
 #include "LinkedList.hpp"
 
 /* constructor */
-LinkedList::LinkedList() {
-  count = 0;
+LinkedList::LinkedList() : count{0} {
   head = new Node;
   tail = new Node;
   head->next = tail;
