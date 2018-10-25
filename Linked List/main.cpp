@@ -1,6 +1,14 @@
+#include <iostream>
 #include "LinkedList.hpp"
 
+void sprint(const char* string) {
+  std::cout << string << std::endl;
+}
+
 int main() {
+  
+  // test case - basic operations
+  sprint("test case - basic operations");
   LinkedList list;
   list.push(1, 1);
   list.push(2, 2);
@@ -11,5 +19,6 @@ int main() {
   
   list.print();
   std::cout << list.count << std::endl;
+  
   return 0;
 }
