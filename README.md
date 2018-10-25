@@ -5,7 +5,7 @@ A repository created to study data structures and stuff like that.
 #### Data Structures
 - [x] Binary Search Tree
 - [x] Dynamic Array
-- [ ] Graph
+- [ ] Graphs
 - [ ] Hash Map
 - [x] Hash Set
 - [x] Integer Set
@@ -29,4 +29,4 @@ A repository created to study data structures and stuff like that.
 
 #### Other Stuff
 - [ ] Bit Manipulation
-
+- [ ] Dynamic Programming
