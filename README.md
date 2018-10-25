@@ -1,6 +1,10 @@
-# Algorithm Study Notes
+## Algorithm Study Notes
 
 A repository created to study data structures and stuff like that.
+
+### Data Structures
+
+### Algorithms
 
 - [x] Binary Search
 - [x] Binary Search Tree
