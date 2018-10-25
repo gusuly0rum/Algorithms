@@ -8,4 +8,5 @@ Graph::~Graph() {
 }
 
 double Graph::density() {
+  return 0;
 }
