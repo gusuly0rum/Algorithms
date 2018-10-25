@@ -27,6 +27,6 @@ A repository created to study data structures and stuff like that.
 - [ ] Tarjan's Algorithm
 - [ ] Topological Sort
 
-#### 
+#### Other Stuff
 - [ ] Bit Manipulation
 
