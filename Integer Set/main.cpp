@@ -36,8 +36,7 @@ int main() {
   std::cout << intset.includes(1) << std::endl;
   std::cout << intset.includes(2) << std::endl;
   std::cout << intset.length() << std::endl;
-  
-  intset.print();
+  sprint("");
   
   return 0;
 }

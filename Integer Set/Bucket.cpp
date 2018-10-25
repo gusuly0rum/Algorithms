@@ -5,7 +5,6 @@
 
 /* constructor */
 Bucket::Bucket() {
-  std::vector<int> store;
 }
 
 /* Accessors */
