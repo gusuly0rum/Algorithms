@@ -5,9 +5,7 @@
 #include "HashSet.hpp"
 
 /* constructor */
-HashSet::HashSet() {
-  this->count = 0;
-  this->numBuckets = 5;
+HashSet::HashSet() : count(0), numBuckets(5) {
   this->store = new std::vector<int>[numBuckets];
 }
 
