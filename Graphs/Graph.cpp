@@ -6,3 +6,6 @@ Graph::Graph() {
 
 Graph::~Graph() {
 }
+
+double Graph::density() {
+}
