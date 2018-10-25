@@ -1,10 +1,10 @@
 #include "BSTNode.hpp"
 
 /* constructor */
-BSTNode::BSTNode(int value) {
-  this->value = value;
-  this->left = nullptr;
-  this->rite = nullptr;
+BSTNode::BSTNode(int value) :
+  value{value},
+  left{nullptr},
+  rite{nullptr} {
 }
 
 BSTNode::~BSTNode() {

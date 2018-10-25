@@ -5,6 +5,11 @@ void print(int value) {
   std::cout << value << std::endl;
 }
 
+// print string
+void sprint(const char* string) {
+  std::cout << string << std::endl;
+}
+
 int main() {
   
   // create tree
@@ -16,7 +21,8 @@ int main() {
     bst.insert(values[index]);
   }
   
-  // BinarySearchTree::insert test case
+  // BST::insert test case
+  sprint("BST::insert test case");
   print(bst.root->value == 5);
   print(bst.root->left->value == 3);
   print(bst.root->left->left->value == 1);
@@ -26,8 +32,10 @@ int main() {
   print(bst.root->rite->value == 7);
   print(bst.root->rite->rite->value == 9);
   print(bst.root->rite->rite->rite->value == 10);
+  sprint("");
 
-  // BinarySearchTree::remove test case
+  // BST::remove test case
+  sprint("BST::remove test case");
   bst.remove(2);
   bst.root->printBFS();
   bst.remove(3);
@@ -36,16 +44,21 @@ int main() {
   bst.root->printBFS();
   bst.remove(7);
   bst.root->printBFS();
+  sprint("");
   
-  // BinarySearchTree::depth test case
+  // BST::depth test case
+  sprint("BST::depth test case");
   print(bst.depth(bst.root->rite));
+  sprint("");
   
-  // BinarySearchTree::isBalanced test case
+  // BST::isBalanced test case
+  sprint("BST::isBalanced test case");
   print(bst.isBalanced(bst.root) == 0);
   print(bst.isBalanced(bst.root->left) == 1);
   print(bst.isBalanced(bst.root->rite) == 0);
   print(bst.isBalanced(bst.root->rite->rite) == 1);
   print(bst.isBalanced(bst.root->left->left) == 1);
+  sprint("");
 
   return 0;
 }

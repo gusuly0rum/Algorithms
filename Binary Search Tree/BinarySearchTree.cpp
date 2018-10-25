@@ -1,8 +1,8 @@
 #include "BinarySearchTree.hpp"
 
 /* constructor */
-BinarySearchTree::BinarySearchTree(BSTNode* root) {
-  this->root = root;
+BinarySearchTree::BinarySearchTree(BSTNode* root) :
+  root{root} {
 }
 
 BinarySearchTree::~BinarySearchTree() {
