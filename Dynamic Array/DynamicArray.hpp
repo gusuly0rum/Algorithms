@@ -1,6 +1,3 @@
-#include <iostream>
-#include <stdexcept>
-
 class DynamicArray {
   // member variables
   int count;

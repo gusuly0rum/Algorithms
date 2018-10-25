@@ -1,6 +1,8 @@
 #include "DynamicArray.hpp"
 
 int main() {
+  
+  // test cases
   DynamicArray array;
   array.push(1);
   array.push(2);

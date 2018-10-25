@@ -1,3 +1,5 @@
+#include <iostream>
+#include <stdexcept>
 #include "DynamicArray.hpp"
 
 /* Constructor & Destructor */
