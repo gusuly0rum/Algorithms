@@ -1,14 +1,13 @@
+#include <vector>
+
 class Node {
+public:
   // member variables
+  std::vector<int> prevEdges;
+  std::vector<int> nextEdges;
   
 public:
   // constructor
   Node();
   ~Node();
-  
-  // basic operations
-  float density();
-  
-private:
-  // private members
 };
