@@ -1,13 +1,21 @@
+#pragma once
 #include <vector>
+#include "Edge.hpp"
+
+class Edge;
 
 class Node {
 public:
   // member variables
-  std::vector<int> prevEdges;
-  std::vector<int> nextEdges;
+  std::vector<Edge*> prevEdges;
+  std::vector<Edge*> nextEdges;
+  int value;
   
 public:
   // constructor
-  Node();
+  Node(int value = NULL);
   ~Node();
+  
+  // basic operations
+  void remove(Node* node);
 };

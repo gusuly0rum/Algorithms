@@ -1,13 +1,24 @@
+#pragma once
 #include "Node.hpp"
+
+class Node;
 
 class Edge {
 public:
   // member variables
-  Node& prevNode;
-  Node& nextNode;
+  Node* prevNode;
+  Node* nextNode;
+  int weight;
   
 public:
   // constructor
-  Edge();
+  Edge(Node* prevNode, Node* nextNode, int weight = NULL);
+  
+  // destructor
   ~Edge();
+  
+private:
+  // private members
+  void connect();
+  int index(std::vector<Edge*> edges, Edge* edge);
 };

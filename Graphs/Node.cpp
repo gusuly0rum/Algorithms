@@ -1,12 +1,15 @@
-#include <iostream>
 #include "Node.hpp"
 
-Node::Node() {
+// constructor
+Node::Node(int value) : value{value} {
 }
 
+// destructor
 Node::~Node() {
+  prevEdges.clear();
+  nextEdges.clear();
 }
 
-float Node::density() {
-  return 0;
+// basic operations
+void Node::remove(Node* node) {
 }
