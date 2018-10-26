@@ -8,6 +8,7 @@ Node::Node(int value) : value{value} {
 Node::~Node() {
   prevEdges.clear();
   nextEdges.clear();
+  value = NULL;
 }
 
 // basic operations
