@@ -1,4 +1,4 @@
-#include "Graph.hpp"
+#include "Node.hpp"
 
 int main() {
   return 0;

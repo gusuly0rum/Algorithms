@@ -1,13 +1,13 @@
-class Graph {
+class Node {
   // member variables
   
 public:
   // constructor
-  Graph();
-  ~Graph();
+  Node();
+  ~Node();
   
   // basic operations
-  double density();
+  float density();
   
 private:
   // private members
