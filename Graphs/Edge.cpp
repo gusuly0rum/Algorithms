@@ -10,15 +10,14 @@ Edge::Edge(Node* prevNode, Node* nextNode, int weight) :
 
 // destructor
 Edge::~Edge() {
-  
+  prevNode->nextEdges.erase(prevNode->nextEdges.begin() + index(prevNode->nextEdges, this));
+  nextNode->prevEdges.erase(nextNode->prevEdges.begin() + index(nextNode->prevEdges, this));
   prevNode = nullptr;
   nextNode = nullptr;
 }
 
 // private members
 void Edge::connect() {
-  prevNode->nextEdges.erase(prevNode->nextEdges.begin() + index(prevNode->nextEdges, this));
-  nextNode->prevEdges.erase(nextNode->prevEdges.begin() + index(nextNode->prevEdges, this));
   prevNode->nextEdges.push_back(this);
   nextNode->prevEdges.push_back(this);
 }

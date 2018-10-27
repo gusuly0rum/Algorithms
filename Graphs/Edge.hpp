@@ -12,7 +12,7 @@ public:
   
 public:
   // constructor
-  Edge(Node* prevNode, Node* nextNode, int weight = NULL);
+  Edge(Node* prevNode, Node* nextNode, int weight = 1);
   
   // destructor
   ~Edge();

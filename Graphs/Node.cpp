@@ -10,7 +10,3 @@ Node::~Node() {
   nextEdges.clear();
   value = NULL;
 }
-
-// basic operations
-void Node::remove(Node* node) {
-}
