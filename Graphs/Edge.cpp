@@ -1,17 +1,20 @@
+#include <iostream>
 #include "Edge.hpp"
 
 // constructor
 Edge::Edge(Node* prevNode, Node* nextNode, int weight) :
-  prevNode{prevNode},
-  nextNode{nextNode},
-  weight{weight} {
+prevNode{prevNode},
+nextNode{nextNode},
+weight{weight} {
   connect();
 }
 
 // destructor
 Edge::~Edge() {
-  prevNode->nextEdges.erase(prevNode->nextEdges.begin() + index(prevNode->nextEdges, this));
-  nextNode->prevEdges.erase(nextNode->prevEdges.begin() + index(nextNode->prevEdges, this));
+  int k1 = index(prevNode->nextEdges, this);
+  int k2 = index(nextNode->prevEdges, this);
+  if (k1 != -1) prevNode->nextEdges.erase(prevNode->nextEdges.begin() + k1);
+  if (k2 != -1) nextNode->prevEdges.erase(nextNode->prevEdges.begin() + k2);
   prevNode = nullptr;
   nextNode = nullptr;
 }

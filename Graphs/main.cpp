@@ -17,9 +17,9 @@ int main() {
   Node node2{2};
   Node node3{3};
   
-//  Edge edge1_2{&node1, &node2};
+  Edge edge1_2{&node1, &node2};
 //  Edge edge2_1{&node2, &node1};
-//
+  
 //  Edge edge3_2{&node3, &node2};
 //  Edge edge2_3{&node2, &node3};
   
