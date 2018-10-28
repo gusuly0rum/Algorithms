@@ -22,6 +22,7 @@ void vprint(std::vector<Edge*> array) {
 int main() {
   
   // test case 1
+  sprint("test case 1");
   Node node1{1};
   Node node2{2};
   Node node3{3};
@@ -33,22 +34,19 @@ int main() {
   Edge edge2_3{&node2, &node3};
   
   sprint("destination nodes of node1");
-  for (int k = 0; k < node1.nextEdges.size(); k++) {
-    print(node1.nextEdges[k]->nextNode->value);
-  }
+  for (int k = 0; k < node1.nextEdges.size(); k++) print(node1.nextEdges[k]->nextNode->value);
   sprint("");
   
   sprint("destination nodes of node2");
-  for (int k = 0; k < node2.nextEdges.size(); k++) {
-    print(node2.nextEdges[k]->nextNode->value);
-  }
+  for (int k = 0; k < node2.nextEdges.size(); k++) print(node2.nextEdges[k]->nextNode->value);
   sprint("");
   
   sprint("destination nodes of node2");
-  for (int k = 0; k < node3.nextEdges.size(); k++) {
-    print(node3.nextEdges[k]->nextNode->value);
-  }
+  for (int k = 0; k < node3.nextEdges.size(); k++) print(node3.nextEdges[k]->nextNode->value);
   sprint("");
+  
+  
+  // test case 2
   
   
   return 0;
