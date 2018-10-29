@@ -15,4 +15,7 @@ public:
   // constructor
   Node(int value = NULL);
   ~Node();
+  
+  // basic operations
+  void destroy();
 };

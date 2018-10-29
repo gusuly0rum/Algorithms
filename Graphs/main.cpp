@@ -10,44 +10,48 @@ void sprint(const char* string) {
   std::cout << string << std::endl;
 }
 
-void vprint(std::vector<Edge*> array) {
+void eprint(std::vector<Edge*> array) {
   std::cout << "{ ";
   for (int index = 0; index < array.size(); index++) {
-    std::cout << array[index];
+    std::cout << array[index]->nextNode->value;
     if (index < array.size() - 1) std::cout << ", ";
   }
-  std::cout << " }\n" << std::endl;
+  std::cout << " }" << std::endl;
 }
 
 int main() {
   
-  // test case 1
-  sprint("test case 1");
+  // test case 1 - connection
+  sprint("test case 1 - connection");
   Node node1{1};
   Node node2{2};
   Node node3{3};
   
   Edge edge1_2{&node1, &node2};
   Edge edge2_1{&node2, &node1};
-  
   Edge edge3_2{&node3, &node2};
   Edge edge2_3{&node2, &node3};
   
-  sprint("destination nodes of node1");
-  for (int k = 0; k < node1.nextEdges.size(); k++) print(node1.nextEdges[k]->nextNode->value);
-  sprint("");
-  
-  sprint("destination nodes of node2");
-  for (int k = 0; k < node2.nextEdges.size(); k++) print(node2.nextEdges[k]->nextNode->value);
-  sprint("");
-  
-  sprint("destination nodes of node2");
-  for (int k = 0; k < node3.nextEdges.size(); k++) print(node3.nextEdges[k]->nextNode->value);
+  eprint(node1.nextEdges);
+  eprint(node2.nextEdges);
+  eprint(node3.nextEdges);
   sprint("");
   
   
-  // test case 2
+  // test case 2 - destruction
+  sprint("test case 2 - destruction");
+  print((int) node1.nextEdges.size());
+  print((int) node2.prevEdges.size());
+  edge1_2.destroy();
+  print((int) node1.nextEdges.size());
+  print((int) node2.prevEdges.size());
+//  eprint(node1.nextEdges);
+//  eprint(node2.nextEdges);
+//  eprint(node3.nextEdges);
+//  edge2_3.destroy();
   
+  
+  // test case 3 -
   
   return 0;
 }

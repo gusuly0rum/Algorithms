@@ -10,3 +10,8 @@ Node::~Node() {
   nextEdges.clear();
   value = NULL;
 }
+
+// basic operations
+void Node::destroy() {
+  value = NULL;
+}
