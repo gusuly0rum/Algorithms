@@ -13,5 +13,7 @@ Node::~Node() {
 
 // basic operations
 void Node::destroy() {
+  prevEdges.clear();
+  nextEdges.clear();
   value = NULL;
 }

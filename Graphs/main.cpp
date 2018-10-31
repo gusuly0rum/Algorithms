@@ -29,8 +29,8 @@ int main() {
   
   Edge edge1_2{&node1, &node2};
   Edge edge2_1{&node2, &node1};
-  Edge edge3_2{&node3, &node2};
-  Edge edge2_3{&node2, &node3};
+//  Edge edge3_2{&node3, &node2};
+//  Edge edge2_3{&node2, &node3};
   
   eprint(node1.nextEdges);
   eprint(node2.nextEdges);
@@ -40,15 +40,10 @@ int main() {
   
   // test case 2 - destruction
   sprint("test case 2 - destruction");
-  print((int) node1.nextEdges.size());
-  print((int) node2.prevEdges.size());
   edge1_2.destroy();
-  print((int) node1.nextEdges.size());
-  print((int) node2.prevEdges.size());
-//  eprint(node1.nextEdges);
-//  eprint(node2.nextEdges);
-//  eprint(node3.nextEdges);
-//  edge2_3.destroy();
+  eprint(node1.nextEdges);
+  eprint(node2.nextEdges);
+  eprint(node3.nextEdges);
   
   
   // test case 3 -
