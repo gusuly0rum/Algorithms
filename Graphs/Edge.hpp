@@ -23,5 +23,4 @@ public:
 private:
   // private members
   void connect();
-  int index(std::vector<Edge*> edges, Edge* edge);
 };

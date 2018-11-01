@@ -1,4 +1,5 @@
 #pragma once
+#include <list>
 #include <vector>
 #include "Edge.hpp"
 
@@ -7,15 +8,12 @@ class Edge;
 class Node {
 public:
   // member variables
-  std::vector<Edge*> prevEdges;
-  std::vector<Edge*> nextEdges;
+  std::list<Edge*> prevEdges;
+  std::list<Edge*> nextEdges;
   int value;
   
 public:
   // constructor
   Node(int value = NULL);
   ~Node();
-  
-  // basic operations
-  void destroy();
 };
