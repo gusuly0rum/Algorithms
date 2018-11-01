@@ -52,8 +52,5 @@ int main() {
   lprint(node2.nextEdges);
   lprint(node3.nextEdges);
   
-  
-  // test case 3 -
-  
   return 0;
 }

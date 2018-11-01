@@ -1,4 +1,3 @@
-#include <list>
 #include <iostream>
 #include "Edge.hpp"
 
@@ -8,10 +7,6 @@ prevNode{prevNode},
 nextNode{nextNode},
 weight{weight} {
   connect();
-}
-
-// destructor
-Edge::~Edge() {
 }
 
 // basic operations

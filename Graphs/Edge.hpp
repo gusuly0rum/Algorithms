@@ -14,9 +14,6 @@ public:
   // constructor
   Edge(Node* prevNode, Node* nextNode, int weight = 1);
   
-  // destructor
-  ~Edge();
-  
   // basic operations
   void destroy();
   
