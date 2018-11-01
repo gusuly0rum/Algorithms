@@ -14,10 +14,9 @@ void sprint(const char* string) {
 
 // debugger
 void lprint(std::list<Edge*> list) {
-  std::cout << "{ ";
   int k = 0;
-  std::list<Edge*>::iterator it;
-  for (it = list.begin(); it != list.end(); it++) {
+  std::cout << "{ ";
+  for (std::list<Edge*>::iterator it = list.begin(); it != list.end(); it++) {
     std::cout << (*it)->nextNode->value;
     if (k < list.size() - 1) std::cout << ", ";
     k++;
@@ -48,7 +47,7 @@ int main() {
   // test case 2 - destruction
   sprint("test case 2 - destruction");
   edge1_2.destroy();
-  edge2_1.destroy();
+  edge3_2.destroy();
   lprint(node1.nextEdges);
   lprint(node2.nextEdges);
   lprint(node3.nextEdges);
