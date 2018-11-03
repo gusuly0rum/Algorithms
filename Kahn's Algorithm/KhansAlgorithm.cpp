@@ -4,7 +4,7 @@
 #include "../Graphs/Edge.hpp"
 #include "KhansAlgorithm.hpp"
 
-std::vector<Node*> kahn(std::vector<Node*> nodes) {
+std::vector<Node*> kahn(std::vector<Node*>& nodes) {
   std::queue<Node*> queue;
   std::vector<Node*> result;
   std::map<Node*, int> numEdges;
