@@ -1,5 +1,6 @@
 #include <map>
 #include <queue>
+#include <iostream>
 #include "../Graphs/Node.hpp"
 #include "../Graphs/Edge.hpp"
 #include "KhansAlgorithm.hpp"
@@ -23,6 +24,7 @@ std::vector<Node*> kahn(std::vector<Node*>& nodes) {
     Node* node = queue.front();
     queue.pop();
     result.push_back(node);
+    vprint(result);
     
     std::list<Edge*>::iterator iter;
     std::list<Edge*> edges = node->nextEdges;
@@ -31,7 +33,7 @@ std::vector<Node*> kahn(std::vector<Node*>& nodes) {
       Edge* edge = *iter;
       numEdges[edge->nextNode]--;
       
-      if (edge->nextNode->prevEdges.size() == 0) {
+      if (numEdges[edge->nextNode] == 0) {
         queue.push(edge->nextNode);
       }
     }
@@ -39,6 +41,17 @@ std::vector<Node*> kahn(std::vector<Node*>& nodes) {
   
   if (result.size() != nodes.size()) result.clear();
   return result;
+}
+
+
+// debugger
+void vprint(std::vector<Node*>& array) {
+  std::cout << "{ ";
+  for (int index = 0; index < array.size(); index++) {
+    std::cout << array[index]->value;
+    if (index < array.size() - 1) std::cout << ", ";
+  }
+  std::cout << " }\n" << std::endl;
 }
 
 
