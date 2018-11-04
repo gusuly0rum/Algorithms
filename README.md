@@ -21,7 +21,7 @@ A repository created to study data structures and stuff like that.
 - [x] Breadth First Search
 - [x] Depth First Search
 - [ ] Dijkstra's Algorithm
-- [ ] Kahn's Algorithm
+- [x] Kahn's Algorithm
 - [ ] Tarjan's Algorithm
 
 #### Sorting Algorithms
