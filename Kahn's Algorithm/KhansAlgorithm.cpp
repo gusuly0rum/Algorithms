@@ -5,6 +5,8 @@
 #include "../Graphs/Edge.hpp"
 #include "KhansAlgorithm.hpp"
 
+
+// Kahn's Algorithm - Topological Sorting
 std::vector<Node*> kahn(std::vector<Node*>& nodes) {
   std::queue<Node*> queue;
   std::vector<Node*> result;
@@ -53,32 +55,3 @@ void vprint(std::vector<Node*>& array) {
   }
   std::cout << " }\n" << std::endl;
 }
-
-
-
-
-
-//# def topological_sort(vertices)
-//#   queue = []
-//#   sorted = []
-//
-//#   vertices.each do |vertex|
-//#     if vertex.in_edges.empty?
-//#       queue.push(vertex)
-//#     end
-//#   end
-//
-//#   until queue.empty?
-//#     vertex = queue.shift
-//#     sorted.push(vertex)
-//
-//#     vertex.out_edges.dup.each do |edge|
-//#       destination = edge.to_vertex
-//#       edge.destroy!
-//#       if destination.in_edges.empty?
-//#         queue.push(destination)
-//#       end
-//#     end
-//#   end
-//#   sorted.length == vertices.length ? sorted : []
-//# end
