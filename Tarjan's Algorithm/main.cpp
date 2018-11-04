@@ -1,4 +1,5 @@
-#include <iostream>
+#include "../Graphs/Edge.hpp"
+#include "../Graphs/Node.hpp"
 #include "TarjansAlgorithm.hpp"
 
 int main() {
