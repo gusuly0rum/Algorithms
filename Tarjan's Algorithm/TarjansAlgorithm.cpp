@@ -5,21 +5,36 @@
 std::vector<Node*> tarjan(std::vector<Node*>& nodes) {
   std::vector<Node*> result;
   std::unordered_set<Node*> visited;
-  std::unordered_set<Node*>::const_iterator iter;
+  std::unordered_set<Node*>::const_iterator nodeIter;
   
   for (int k = 0; k < nodes.size(); k++) {
     Node* node = nodes[k];
-    iter = visited.find(node);
+    nodeIter = visited.find(node);
     
-    if (iter != visited.end()) {
-      visit(node, visited);
+    if (nodeIter != visited.end()) {
+      visit(node, visited, result);
     }
   }
   
   return result;
 }
 
-bool visit(Node* node, std::unordered_set<Node*> visited) {
+bool visit(Node* node, std::unordered_set<Node*> visited, std::vector<Node*> result) {
+  visited.insert(node);
+  std::list<Edge*>::iterator edgeIter;
+  std::unordered_set<Node*>::const_iterator nodeIter;
+  
+  for (edgeIter = node->nextEdges.begin(); edgeIter != node->nextEdges.end(); edgeIter++) {
+    Edge* edge = *edgeIter;
+    Node* next = edge->nextNode;
+    nodeIter = visited.find(next);
+    
+    if (nodeIter != visited.end()) {
+      visit(next, visited, result);
+    }
+  }
+  
+  result.push_back(node);
   return false;
 }
 
