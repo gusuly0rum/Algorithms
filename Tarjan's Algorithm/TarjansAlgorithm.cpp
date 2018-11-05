@@ -4,11 +4,23 @@
 // Tarjan's Algorithm - Topological Sorting
 std::vector<Node*> tarjan(std::vector<Node*>& nodes) {
   std::vector<Node*> result;
+  std::unordered_set<Node*> visited;
+  std::unordered_set<Node*>::const_iterator iter;
+  
+  for (int k = 0; k < nodes.size(); k++) {
+    Node* node = nodes[k];
+    iter = visited.find(node);
+    
+    if (iter != visited.end()) {
+      visit(node, visited);
+    }
+  }
+  
   return result;
 }
 
-bool visit(Node* node) {
-  
+bool visit(Node* node, std::unordered_set<Node*> visited) {
+  return false;
 }
 
 
