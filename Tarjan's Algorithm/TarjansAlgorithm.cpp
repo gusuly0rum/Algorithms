@@ -7,6 +7,10 @@ std::vector<Node*> tarjan(std::vector<Node*>& nodes) {
   return result;
 }
 
+bool visit(Node* node) {
+  
+}
+
 
 // debugger
 void vprint(std::vector<Node*>& array) {
