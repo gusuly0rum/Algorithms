@@ -3,7 +3,7 @@
 
 int main() {
   
-  // test case
+  // test case - graph with no cycles
   Node node1{1};
   Node node2{2};
   Node node3{3};
@@ -19,6 +19,21 @@ int main() {
   std::vector<Node*> nodes { &node2, &node5, &node1, &node4, &node3 };
   std::list<Node*> result {tarjan(nodes)};
   lprint(result);
+  
+  // test case - graph with a cycle
+  Node vertex1{1};
+  Node vertex2{2};
+  Node vertex3{3};
+  Node vertex4{4};
+  Node vertex5{5};
+  
+  Edge line12 {&vertex1, &vertex2};
+  Edge line23 {&vertex2, &vertex3};
+  Edge line34 {&vertex3, &vertex4};
+  Edge line42 {&vertex4, &vertex2};
+  Edge line45 {&vertex4, &vertex5};
+  
+  std::vector<Node*> nodes { &node2, &node5, &node1, &node4, &node3 };
   
   return 0;
 }
