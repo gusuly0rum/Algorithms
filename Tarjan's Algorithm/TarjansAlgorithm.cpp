@@ -4,33 +4,34 @@
 // Tarjan's Algorithm - Topological Sorting
 std::list<Node*> tarjan(std::vector<Node*>& nodes) {
   std::list<Node*> result;
+  std::unordered_set<Node*> stack;
   std::unordered_set<Node*> visited;
-  std::unordered_set<Node*>::const_iterator nodeIter;
   
   for (int k = 0; k < nodes.size(); k++) {
     Node* node = nodes[k];
-    nodeIter = visited.find(node);
     
-    if (nodeIter == visited.end()) {
-      visit(node, visited, result);
+    if (visited.find(node) == visited.end()) {
+      visit(node, stack, visited, result);
     }
   }
   
   return result;
 }
 
-bool visit(Node* node, std::unordered_set<Node*>& visited, std::list<Node*>& result) {
+bool visit(Node* node,
+           std::unordered_set<Node*>& stack,
+           std::unordered_set<Node*>& visited,
+           std::list<Node*>& result) {
+  
   visited.insert(node);
   std::list<Edge*>::const_iterator edgeIter;
-  std::unordered_set<Node*>::const_iterator nodeIter;
   
   for (edgeIter = node->nextEdges.begin(); edgeIter != node->nextEdges.end(); edgeIter++) {
     Edge* edge = *edgeIter;
     Node* next = edge->nextNode;
-    nodeIter = visited.find(next);
     
-    if (nodeIter == visited.end()) {
-      visit(next, visited, result);
+    if (visited.find(next) == visited.end()) {
+      visit(next, stack, visited, result);
     }
   }
   
