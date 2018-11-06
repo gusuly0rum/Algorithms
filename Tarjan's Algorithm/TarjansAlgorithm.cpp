@@ -2,8 +2,8 @@
 #include "TarjansAlgorithm.hpp"
 
 // Tarjan's Algorithm - Topological Sorting
-std::vector<Node*> tarjan(std::vector<Node*>& nodes) {
-  std::vector<Node*> result;
+std::list<Node*> tarjan(std::vector<Node*>& nodes) {
+  std::list<Node*> result;
   std::unordered_set<Node*> visited;
   std::unordered_set<Node*>::const_iterator nodeIter;
   
@@ -11,7 +11,7 @@ std::vector<Node*> tarjan(std::vector<Node*>& nodes) {
     Node* node = nodes[k];
     nodeIter = visited.find(node);
     
-    if (nodeIter != visited.end()) {
+    if (nodeIter == visited.end()) {
       visit(node, visited, result);
     }
   }
@@ -19,9 +19,9 @@ std::vector<Node*> tarjan(std::vector<Node*>& nodes) {
   return result;
 }
 
-bool visit(Node* node, std::unordered_set<Node*> visited, std::vector<Node*> result) {
+bool visit(Node* node, std::unordered_set<Node*>& visited, std::list<Node*>& result) {
   visited.insert(node);
-  std::list<Edge*>::iterator edgeIter;
+  std::list<Edge*>::const_iterator edgeIter;
   std::unordered_set<Node*>::const_iterator nodeIter;
   
   for (edgeIter = node->nextEdges.begin(); edgeIter != node->nextEdges.end(); edgeIter++) {
@@ -29,22 +29,25 @@ bool visit(Node* node, std::unordered_set<Node*> visited, std::vector<Node*> res
     Node* next = edge->nextNode;
     nodeIter = visited.find(next);
     
-    if (nodeIter != visited.end()) {
+    if (nodeIter == visited.end()) {
       visit(next, visited, result);
     }
   }
   
-  result.push_back(node);
+  result.push_front(node);
   return false;
 }
 
 
 // debugger
-void vprint(std::vector<Node*>& array) {
+void lprint(std::list<Node*>& list) {
+  int index = 0;
   std::cout << "{ ";
-  for (int index = 0; index < array.size(); index++) {
-    std::cout << array[index]->value;
-    if (index < array.size() - 1) std::cout << ", ";
+  std::list<Node*>::const_iterator iter;
+  for (iter = list.begin(); iter != list.end(); iter++) {
+    std::cout << (*iter)->value;
+    if (index < list.size() - 1) std::cout << ", ";
+    index++;
   }
   std::cout << " }\n" << std::endl;
 }
