@@ -11,7 +11,8 @@ std::list<Node*> tarjan(std::vector<Node*>& nodes) {
     Node* node = nodes[k];
     
     if (visited.find(node) == visited.end()) {
-      visit(node, stack, visited, result);
+      bool isCyclic = visit(node, stack, visited, result);
+      if (isCyclic) result.clear(); return result;
     }
   }
   
@@ -23,18 +24,21 @@ bool visit(Node* node,
            std::unordered_set<Node*>& visited,
            std::list<Node*>& result) {
   
+  stack.insert(node);
   visited.insert(node);
   std::list<Edge*>::const_iterator edgeIter;
   
   for (edgeIter = node->nextEdges.begin(); edgeIter != node->nextEdges.end(); edgeIter++) {
     Edge* edge = *edgeIter;
     Node* next = edge->nextNode;
-    
+    if (stack.find(next) != stack.end()) return true;
     if (visited.find(next) == visited.end()) {
-      visit(next, stack, visited, result);
+      bool isCyclic = visit(next, stack, visited, result);
+      if (isCyclic) return true;
     }
   }
   
+  stack.erase(node);
   result.push_front(node);
   return false;
 }
