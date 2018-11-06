@@ -33,7 +33,7 @@ int main() {
   Edge line42 {&vertex4, &vertex2};
   Edge line45 {&vertex4, &vertex5};
   
-  std::vector<Node*> nodes { &node2, &node5, &node1, &node4, &node3 };
+  std::vector<Node*> vertices { &node2, &node5, &node1, &node4, &node3 };
   
   return 0;
 }
