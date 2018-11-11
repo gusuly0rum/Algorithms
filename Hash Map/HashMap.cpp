@@ -4,9 +4,9 @@
 #include "HashMap.hpp"
 
 /* constructor */
-HashMap::HashMap() {
-  this->count = 0;
-  this->numBuckets = 5;
+HashMap::HashMap():
+  count{0},
+  numBuckets{5} {
   this->store = new LinkedList[numBuckets];
 }
 
