@@ -1,40 +1,41 @@
 #include <string>
 #include <sstream>
 #include <iostream>
+#include <algorithm>
 #include "HashMap.hpp"
 
 /* constructor */
 HashMap::HashMap():
   count{0},
   numBuckets{5} {
-  this->store = new LinkedList[numBuckets];
+  this->store = new std::list<int>[numBuckets];
 }
 
 /* accessors */
 int HashMap::get(int key) const {
   int internal = bucketIndex(key, numBuckets);
-  LinkedList* bucket = &store[internal];
-  Node* node = bucket->find(key);
+  std::list<int>* bucket = &store[internal];
+  Node* node = **std::find(bucket->begin(), bucket->end(), key);
   return node->val;
 }
 
 void HashMap::set(int key, int val) {
   if (count == numBuckets) resize();
   int internal = bucketIndex(key, numBuckets);
-  LinkedList* bucket = &store[internal];
+  std::list<int>* bucket = &store[internal];
   bucket->push(key, val);
 }
 
 /* basic operations */
 void HashMap::remove(int key) {
   int internal = bucketIndex(key, numBuckets);
-  LinkedList* bucket = &store[internal];
+  std::list<int>* bucket = &store[internal];
   bucket->remove(key);
 }
 
 bool HashMap::includes(int key) const {
   int internal = bucketIndex(key, numBuckets);
-  LinkedList* bucket = &store[internal];
+  std::list<int>* bucket = &store[internal];
   return bucket->includes(key);
 }
 
@@ -62,16 +63,14 @@ int HashMap::hash(int value) const {
 }
 
 void HashMap::resize() {
-  int value;
-  int newIndex;
   int newBuckets = numBuckets * 2;
   LinkedList* newStore = new LinkedList[newBuckets];
   
   for (int bucketIdx = 0; bucketIdx < numBuckets; bucketIdx++) {
     for (int index = 0; index < store[bucketIdx].count; index++) {
-//      value = store[bucketIdx][index];
-//      newIndex = bucketIndex(value, newBuckets);
-//      newStore[newIndex].push_back(value);
+      int value = store[bucketIdx][index];
+      int newIndex = bucketIndex(value, newBuckets);
+      newStore[newIndex].push_back(value);
     }
   }
   

@@ -12,10 +12,10 @@ int main() {
   hashmap.set(3,3);
   hashmap.set(4,4);
   hashmap.set(5,5);
+  hashmap.print();
 
   print(hashmap.includes(5));
   print(hashmap.includes(10));
-  hashmap.print();
   
   return 0;
 }

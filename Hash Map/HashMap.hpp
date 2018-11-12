@@ -1,10 +1,10 @@
-#include "../Linked List/LinkedList.hpp"
+#include <list>
 
 class HashMap {
   // member variables
   int count;
   int numBuckets;
-  LinkedList* store;
+  std::list<int>* store;
   
 public:
   // constructor
