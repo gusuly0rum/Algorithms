@@ -1,6 +1,7 @@
 #include "Frog.hpp"
 #include "debugger.hpp"
 #include "Fibonacci.hpp"
+#include "SuperFrog.hpp"
 
 int main() {
   
