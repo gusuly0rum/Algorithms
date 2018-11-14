@@ -1,20 +1,12 @@
-#include <iostream>
 #include "Frog.hpp"
+#include "debugger.hpp"
 #include "Fibonacci.hpp"
-
-void print(int value) {
-  std::cout << value << std::endl;
-}
-
-void sprint(const char* string) {
-  std::cout << string << std::endl;
-}
 
 int main() {
   
   // test case - Fibonacci Top Down
-  Fibonacci fibonacci;
   sprint("test case - Fibonacci Top Down");
+  Fibonacci fibonacci;
   print(fibonacci.topDown(1));
   print(fibonacci.topDown(2));
   print(fibonacci.topDown(3));
@@ -32,10 +24,17 @@ int main() {
   sprint("");
   
   // test case - Frog Top Down
-  sprint("test case - Blair Top Down");
+  sprint("test case - Frog Top Down");
+  Frog frog;
+  vvprint(frog.topDown(1));
+  vvprint(frog.topDown(2));
+  vvprint(frog.topDown(3));
+  vvprint(frog.topDown(4));
+  sprint("");
   
   // test case - Frog Bottom Up
-  sprint("test case - Blair Bottom Up");
+  sprint("test case - Frog Bottom Up");
+  sprint("");
   
   return 0;
 }
