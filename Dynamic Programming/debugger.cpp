@@ -1,13 +1,16 @@
 #include "debugger.hpp"
 
+// print ints
 void print(int value) {
   std::cout << value << std::endl;
 }
 
+// print strings
 void sprint(const char* string) {
   std::cout << string << std::endl;
 }
 
+// print arrays
 void vprint(std::vector<int> array) {
   std::cout << "{ ";
   for (int k = 0; k < array.size(); k++) {
@@ -17,6 +20,7 @@ void vprint(std::vector<int> array) {
   std::cout << " }";
 }
 
+// print 2d arrays
 void vvprint(std::vector<std::vector<int>> array) {
   std::cout << "{ ";
   for (int k = 0; k < array.size(); k++) {
