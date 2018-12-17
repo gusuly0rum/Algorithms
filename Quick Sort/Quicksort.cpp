@@ -19,13 +19,13 @@ std::vector<int> quicksort(std::vector<int> array) {
   int pivotIndex = length / 2;
   int pivot = array[pivotIndex];
   
-  int element;
   std::vector<int> left;
   std::vector<int> pivs;
   std::vector<int> rite;
   
   for (int index = 0; index < length; index++) {
-    element = array[index];
+    int element = array[index];
+    
     if (element < pivot) {
       left.push_back(element);
     } else if (element > pivot) {
@@ -52,12 +52,12 @@ void quicksortInplace(std::vector<int>& array, int start, int end) {
 }
 
 int partition(std::vector<int>& array, int start, int end) {
-  int element;
   int wall = start;
   int pivot = array[start];
 
   for (int k = (start + 1); k <= end; k++) {
-    element = array[k];
+    int element = array[k];
+    
     if (element <= pivot) {
       wall++;
       array[k] = array[wall];
