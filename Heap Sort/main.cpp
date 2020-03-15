@@ -16,8 +16,8 @@ int main() {
   BinaryMaxHeap::print(bmh.store);
   
   // test case heapsort
-  std::vector<int> result1 = heapsort(array);
-  BinaryMaxHeap::print(result1);
+  std::vector<int> result = heapsort(array);
+  BinaryMaxHeap::print(result);
   
   // test case heapsort inplace
   heapsortInplace(array);
